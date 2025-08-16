@@ -1,0 +1,16 @@
+Folder ini berisi assets yang diperlukan untuk landing page:
+
+1. logo-smkn4.png - Logo SMKN 4 Bandung (disarankan ukuran 200x200px)
+2. hero-bg.jpg - Background image untuk hero section (disarankan ukuran 1920x1080px)
+
+Catatan:
+- Gunakan gambar dengan format PNG untuk logo (transparansi)
+- Gunakan gambar dengan format JPG untuk background (kualitas tinggi)
+- Optimalkan ukuran file untuk performa web yang baik
+- Pastikan gambar memiliki lisensi yang sesuai
+
+Untuk sementara, Anda bisa menggunakan:
+- Placeholder image dari services seperti:
+  * https://placeholder.com/
+  * https://picsum.photos/
+  * https://unsplash.com/ (untuk foto pendidikan)
