@@ -135,6 +135,37 @@ document.addEventListener('DOMContentLoaded', function() {
         statsObserver.observe(statsSection);
     }
 
+    // Video Background Management
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        // Add loading class initially
+        heroVideo.classList.add('loading');
+        
+        // Handle video events
+        heroVideo.addEventListener('loadeddata', function() {
+            this.classList.remove('loading');
+            this.classList.add('loaded');
+        });
+        
+        heroVideo.addEventListener('error', function() {
+            this.classList.add('error');
+            console.log('Video failed to load, using fallback background');
+        });
+        
+        // Pause video when not visible for performance
+        const videoObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroVideo.play().catch(e => console.log('Video autoplay failed:', e));
+                } else {
+                    heroVideo.pause();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        videoObserver.observe(heroVideo);
+    }
+
     // Parallax effect untuk hero section
     const heroSection = document.querySelector('#beranda');
     if (heroSection) {
