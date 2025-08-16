@@ -1,0 +1,9 @@
+@echo off
+echo Adding files to git...
+git add .
+echo Committing changes...
+git commit -m "Update SMKN 4 Bandung landing page with README"
+echo Pushing to GitHub...
+git push origin master
+echo Done! Check your GitHub repository.
+pause
