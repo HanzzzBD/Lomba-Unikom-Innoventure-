@@ -370,3 +370,188 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('SMKN 4 Bandung Landing Page loaded successfully!');
 });
+// jQuery Ripples Effect for Hero Section (Video Compatible)
+$(document).ready(function() {
+    // Check if device is mobile/touch
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 'ontouchstart' in window;
+    
+    // Check if jQuery Ripples plugin is loaded
+    if (typeof $.fn.ripples === 'undefined') {
+        console.warn('jQuery Ripples plugin not loaded. Loading from CDN...');
+        loadJQueryRipples();
+        return;
+    }
+    
+    if (!isMobile) {
+        // Initialize jQuery Ripples with video compatibility
+        initializeJQueryRipples();
+    }
+});
+
+function loadJQueryRipples() {
+    // Load jQuery Ripples plugin dynamically
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js';
+    script.onload = function() {
+        console.log('jQuery Ripples plugin loaded successfully');
+        if (!isMobile) {
+            initializeJQueryRipples();
+        }
+    };
+    script.onerror = function() {
+        console.error('Failed to load jQuery Ripples plugin');
+    };
+    document.head.appendChild(script);
+}
+
+function initializeJQueryRipples() {
+    const heroSection = $('#beranda');
+    if (heroSection.length === 0) {
+        console.warn('Hero section #beranda not found');
+        return;
+    }
+    
+    console.log('Initializing jQuery Ripples on #beranda...');
+    
+    try {
+        // Configure ripples for video compatibility
+        heroSection.ripples({
+            resolution: 256, // Lower resolution for better performance
+            dropRadius: 20,
+            perturbance: 0.04,
+            interactive: true,
+            crossOrigin: '',
+            dropAnimateTime: 600,
+            dropGradientTime: 400,
+            // Video compatibility settings
+            imageUrl: null, // Don't use image
+            imgWidth: 0,
+            imgHeight: 0
+        });
+        
+        // Add click event for manual ripple drops
+        heroSection.on('click', function(e) {
+            const $el = $(this);
+            const x = e.pageX - $el.offset().left;
+            const y = e.pageY - $el.offset().top;
+            const dropRadius = 20;
+            const strength = 0.04 + Math.random() * 0.04;
+            
+            $el.ripples('drop', x, y, dropRadius, strength);
+        });
+        
+        // Add automatic ripple effect
+        setInterval(function() {
+            const $el = heroSection;
+            const x = Math.random() * $el.width();
+            const y = Math.random() * $el.height();
+            const dropRadius = 15 + Math.random() * 10;
+            const strength = 0.02 + Math.random() * 0.03;
+            
+            $el.ripples('drop', x, y, dropRadius, strength);
+        }, 3000); // Create ripple every 3 seconds
+        
+        // Add mouse movement ripple effect
+        heroSection.on('mousemove', function(e) {
+            if (Math.random() < 0.1) { // 10% chance to create ripple on mouse move
+                const $el = $(this);
+                const x = e.pageX - $el.offset().left;
+                const y = e.pageY - $el.offset().top;
+                const dropRadius = 10 + Math.random() * 5;
+                const strength = 0.01 + Math.random() * 0.02;
+                
+                $el.ripples('drop', x, y, dropRadius, strength);
+            }
+        });
+        
+        console.log('jQuery Ripples initialized successfully');
+        
+        // Test ripple effect
+        setTimeout(function() {
+            try {
+                const $el = heroSection;
+                const x = $el.width() / 2;
+                const y = $el.height() / 2;
+                $el.ripples('drop', x, y, 20, 0.04);
+                console.log('Test ripple created successfully');
+            } catch (testError) {
+                console.error('Test ripple failed:', testError);
+            }
+        }, 1000);
+        
+    } catch (error) {
+        console.error('jQuery Ripples failed to initialize:', error);
+        // Fallback to custom ripple if jQuery Ripples fails
+        createCustomRippleEffect();
+    }
+}
+
+// Fallback Custom Ripple Effect (if jQuery Ripples fails)
+function createCustomRippleEffect() {
+    const heroSection = document.getElementById('beranda');
+    if (!heroSection) return;
+    
+    console.log('Creating fallback custom ripple effect...');
+    
+    // Create ripple container
+    const rippleContainer = document.createElement('div');
+    rippleContainer.className = 'custom-ripple-container';
+    rippleContainer.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 25;
+        overflow: hidden;
+    `;
+    
+    heroSection.appendChild(rippleContainer);
+    
+    // Add click event for ripples
+    heroSection.addEventListener('click', function(e) {
+        createRipple(e.clientX, e.clientY);
+    });
+    
+    // Add automatic ripples
+    setInterval(() => {
+        const x = Math.random() * heroSection.offsetWidth;
+        const y = Math.random() * heroSection.offsetHeight;
+        createRipple(x, y);
+    }, 4000);
+    
+    function createRipple(x, y) {
+        const ripple = document.createElement('div');
+        ripple.className = 'custom-ripple';
+        
+        // Calculate position relative to hero section
+        const rect = heroSection.getBoundingClientRect();
+        const relativeX = x - rect.left;
+        const relativeY = y - rect.top;
+        
+        ripple.style.cssText = `
+            position: absolute;
+            left: ${relativeX}px;
+            top: ${relativeY}px;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            animation: ripple-animation 2s ease-out forwards;
+            pointer-events: none;
+        `;
+        
+        rippleContainer.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 2000);
+    }
+    
+    console.log('Fallback custom ripple effect created successfully');
+}
