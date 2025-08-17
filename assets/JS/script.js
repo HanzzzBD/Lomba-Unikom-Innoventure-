@@ -223,11 +223,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const statsObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Only look for counters if they exist
                     const counters = entry.target.querySelectorAll('.text-4xl');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.textContent);
-                        animateCounter(counter, target);
-                    });
+                    if (counters.length > 0) {
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.textContent);
+                            if (!isNaN(target)) {
+                                animateCounter(counter, target);
+                            }
+                        });
+                    }
                     statsObserver.unobserve(entry.target);
                 }
             });
@@ -311,6 +316,84 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // ===== THEME TOGGLE FUNCTIONALITY =====
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    
+    // Initialize theme from localStorage or default to light
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.body.setAttribute('data-theme', savedTheme);
+        
+        // Update toggle button state
+        if (themeToggle) themeToggle.setAttribute('data-theme', savedTheme);
+        if (mobileThemeToggle) mobileThemeToggle.setAttribute('data-theme', savedTheme);
+        
+        console.log('Theme initialized:', savedTheme);
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Update document attributes
+        document.documentElement.setAttribute('data-theme', newTheme);
+        document.body.setAttribute('data-theme', newTheme);
+        
+        // Update toggle buttons
+        if (themeToggle) themeToggle.setAttribute('data-theme', newTheme);
+        if (mobileThemeToggle) mobileThemeToggle.setAttribute('data-theme', newTheme);
+        
+        // Save to localStorage
+        localStorage.setItem('theme', newTheme);
+        
+        // Add ripple effect to toggle
+        createToggleRipple();
+        
+        console.log('Theme toggled to:', newTheme);
+    }
+    
+    // Create ripple effect on toggle
+    function createToggleRipple() {
+        const ripple = document.createElement('div');
+        ripple.className = 'toggle-ripple-effect';
+        ripple.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            animation: toggle-ripple 0.6s ease-out forwards;
+        `;
+        
+        document.body.appendChild(ripple);
+        
+        setTimeout(() => {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 600);
+    }
+    
+    // Add event listeners for theme toggles
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Initialize theme on page load
+    initializeTheme();
+    
     // ===== INITIALIZATION =====
     console.log('SMKN 4 Bandung Landing Page loaded successfully!');
     

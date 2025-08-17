@@ -1,0 +1,272 @@
+/* ===== RESPONSIVE FIXES FOR SMKN 4 BANDUNG ===== */
+
+/* ===== NAVBAR RESPONSIVENESS ===== */
+@media (max-width: 1024px) {
+    .nav-links-liquid-container {
+        gap: 2px;
+    }
+    
+    .liquid-nav-link {
+        padding: 8px 12px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-liquid-container {
+        height: 56px;
+        border-radius: 28px;
+        padding: 0 12px;
+    }
+    
+    .brand-liquid-container {
+        padding: 6px 12px;
+        gap: 8px;
+    }
+    
+    .brand-liquid-container h1 {
+        font-size: 1rem;
+    }
+    
+    .brand-liquid-container p {
+        font-size: 0.75rem;
+    }
+    
+    .nav-links-liquid-container {
+        padding: 6px 12px;
+        gap: 1px;
+    }
+    
+    .liquid-nav-link {
+        font-size: 0.875rem;
+        padding: 6px 10px;
+    }
+    
+    .theme-toggle-container {
+        margin-left: 0.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar-liquid-container {
+        height: 52px;
+        border-radius: 26px;
+        padding: 0 10px;
+    }
+    
+    .brand-liquid-container {
+        padding: 4px 8px;
+        gap: 6px;
+    }
+    
+    .brand-liquid-container .w-10 {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .brand-liquid-container h1 {
+        font-size: 0.875rem;
+    }
+    
+    .brand-liquid-container p {
+        font-size: 0.625rem;
+    }
+    
+    .nav-links-liquid-container {
+        padding: 4px 8px;
+    }
+    
+    .liquid-nav-link {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+}
+
+/* ===== VIRTUAL TOUR RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+    #virtual-tour .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #virtual-tour .bg-gradient-to-br {
+        padding: 1.5rem;
+    }
+    
+    #virtual-tour .fas.fa-vr-cardboard {
+        font-size: 3rem;
+    }
+    
+    #virtual-tour h4 {
+        font-size: 1.125rem;
+    }
+    
+    #virtual-tour p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #virtual-tour .bg-gradient-to-br {
+        padding: 1rem;
+    }
+    
+    #virtual-tour .fas.fa-vr-cardboard {
+        font-size: 2.5rem;
+    }
+    
+    #virtual-tour h4 {
+        font-size: 1rem;
+    }
+    
+    #virtual-tour p {
+        font-size: 0.75rem;
+    }
+    
+    #virtual-tour .space-y-3 {
+        margin-top: 1rem;
+    }
+}
+
+/* ===== GOOGLE MAPS RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+    #virtual-tour iframe {
+        height: 16rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #virtual-tour iframe {
+        height: 14rem;
+    }
+}
+
+/* ===== GENERAL RESPONSIVE IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+    .container, .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .mb-16 {
+        margin-bottom: 2rem;
+    }
+    
+    .text-4xl {
+        font-size: 1.875rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    .text-xl {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container, .max-w-7xl {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .py-20 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .mb-16 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .text-4xl {
+        font-size: 1.5rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.25rem;
+    }
+    
+    .text-xl {
+        font-size: 1rem;
+    }
+    
+    .gap-8 {
+        gap: 1rem;
+    }
+    
+    .p-8 {
+        padding: 1rem;
+    }
+}
+
+/* ===== STICKY NAVBAR ENHANCEMENTS ===== */
+nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Navbar background for better visibility */
+nav.bg-white\/80 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+/* Dark mode navbar adjustments */
+body[data-theme="dark"] nav.bg-white\/80 {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    border-bottom-color: rgba(71, 85, 105, 0.5) !important;
+}
+
+/* Ensure content doesn't get hidden behind sticky navbar */
+body {
+    padding-top: 80px !important;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 72px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding-top: 68px !important;
+    }
+}
+
+/* Hero section adjustments for sticky navbar */
+.hero-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Ensure hero content is properly positioned */
+.hero-content {
+    padding-top: 2rem !important;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding-top: 1.5rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-content {
+        padding-top: 1rem !important;
+    }
+}
