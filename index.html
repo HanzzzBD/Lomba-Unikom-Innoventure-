@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="assets/CSS/styles.css">
     <!-- Theme Fixes CSS -->
     <link rel="stylesheet" href="assets/CSS/theme-fix.css">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="assets/CSS/footer-fix.css">
+    <!-- Liquid Glass Button CSS -->
+    <link rel="stylesheet" href="assets/CSS/liquid-glass-button.css">
 </head>
 
 <body class="font-['Inter'] text-gray-800">
@@ -137,7 +141,7 @@
     <section id="beranda" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Video Background -->
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/video/SMKN_4_BANDUNG.mp4" type="video/mp4">
+            <source src="assets/video/SMKN_4_BANDUNG_2019-2020.mp4" type="video/mp4">
         </video>
         
         <!-- Video Overlay -->
@@ -154,12 +158,12 @@
             </p>
                 
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#daftar" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#daftar" class="liquid-glass-btn primary large flex items-center gap-3">
                         <i class="fas fa-user-plus"></i>
                         Daftar Sekarang
                     </a>
-                    <a href="#virtual-tour" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                    <a href="#virtual-tour" class="liquid-glass-btn secondary large flex items-center gap-3">
                         <i class="fas fa-vr-cardboard"></i>
                         Kunjungi Virtual Tour
                     </a>
@@ -294,7 +298,7 @@
                 <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-star text-2xl text-blue-600"></i>
@@ -561,10 +565,10 @@
                                         referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </div>
-                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105">
-                                    Mulai Virtual Tour
+                                <a href="#" class="liquid-glass-btn secondary large flex items-center gap-3">
+                                    <i class="fas fa-vr-cardboard"></i>
+                                    Kunjungi Virtual Tour
                                 </a>
-                                <p class="text-xs sm:text-sm text-gray-500">*Virtual Tour akan segera tersedia</p>
                             </div>
                         </div>
                     </div>
@@ -629,7 +633,8 @@
                             </div>
                             
                             <div class="mt-6">
-                                <a href="https://spmb.jabarprov.go.id/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" target="_blank">
+                                <a href="https://spmb.jabarprov.go.id/" class="liquid-glass-btn primary" target="_blank">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
                                     Kunjungi Website PPDB
                                 </a>
                             </div>
@@ -648,8 +653,8 @@
                     <div class="flex items-center">
                         <img src="/assets/img/logo_smkn4bdg.png" alt="Logo SMKN 4 Bandung" class="h-12 w-auto">
                         <div class="ml-3">
-                            <h3 class="text-xl font-bold text-blue-400">SMKN 4</h3>
-                            <p class="text-sm text-gray-400">Bandung</p>
+                            <h3 class="text-xl font-bold text-blue-400">SMKN 4 Bandung</h3>
+
                         </div>
                     </div>
                     <p class="text-gray-400">Mencetak Lulusan Siap Kerja, Kreatif, dan Mandiri</p>
@@ -668,17 +673,17 @@
                         </div>
                         <div class="flex items-center text-gray-400">
                             <i class="fas fa-envelope mr-3 text-blue-400"></i>
-                            <span>info@smkn4bandung.sch.id</span>
+                            <span>info@smkn4bdg.sch.id</span>
                         </div>
                         <div class="flex items-center text-gray-400">
                             <i class="fas fa-globe mr-3 text-blue-400"></i>
-                            <a href="https://smkn4bdg.sch.id" class="hover:text-blue-400 transition-colors" target="_blank">smkn4bandung.sch.id</a>
+                            <a href="https://smkn4bdg.sch.id" class="hover:text-blue-400 transition-colors" target="_blank">smkn4bdg.sch.id</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="space-y-4">
-                    <h4 class="text-lg font-semibold">Link Cepat</h4>
+                    <h4 class="text-lg font-semibold text-white">Link Cepat</h4>
                     <div class="space-y-2">
                         <a href="#beranda" class="block text-gray-400 hover:text-blue-400 transition-colors">Beranda</a>
                         <a href="#tentang" class="block text-gray-400 hover:text-blue-400 transition-colors">Tentang</a>
@@ -712,7 +717,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 SMKN 4 Bandung. All rights reserved.</p>
+                <p class="text-gray-400">&copy; 2025 SMKN 4 Bandung. All rights reserved.</p>
             </div>
         </div>
     </footer>
