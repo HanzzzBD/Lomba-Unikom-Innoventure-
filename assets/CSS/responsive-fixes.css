@@ -336,3 +336,116 @@ body[data-theme="dark"] #mobile-menu a { color: #f8fafc !important; }
 .menu-bounce-out {
     animation: mobileMenuBounceOut 220ms ease both;
 }
+
+/* ===== TIMELINE BADGE & TAG ===== */
+.timeline-card {
+    position: relative;
+}
+
+.timeline-badge {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(16px);
+}
+
+/* ===== FASILITAS PARALLAX TWEAKS ===== */
+/* Parallax banner di atas section */
+.parallax-hero {
+    position: relative;
+    height: 38vh;
+    min-height: 260px;
+    width: 100%;
+    background-image: url('../img/smkn4bdg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(2,6,23,0.25) 0%, rgba(2,6,23,0.55) 80%);
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .parallax-hero { background-attachment: scroll; }
+}
+
+/* Ensure facility-card looks good on dark overlay */
+/* Card styling */
+#fasilitas .facility-card {
+    position: relative;
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.18);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+    will-change: transform, box-shadow;
+}
+#fasilitas .facility-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.06) 40%, transparent 60%);
+    opacity: 0; 
+    transition: opacity .35s ease;
+    pointer-events: none;
+}
+#fasilitas .facility-card:hover::after { opacity: .9; }
+#fasilitas .facility-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(59,130,246,0.45);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,130,246,0.15) inset;
+}
+#fasilitas .facility-card:active { transform: translateY(-4px) scale(1.01); }
+#fasilitas .facility-card .facility-image { transition: transform .35s ease, filter .35s ease; }
+#fasilitas .facility-card:hover .facility-image { transform: translateY(-6px) scale(1.06); filter: brightness(1.05); }
+#fasilitas .facility-content h3 { font-size: 1.5rem; }
+#fasilitas .facility-content p { font-size: 1.05rem; }
+#fasilitas .facility-image { height: 320px; font-size: 3.75rem; }
+#fasilitas .facility-card { padding-bottom: 0.5rem; }
+
+@media (min-width: 1024px) {
+    #fasilitas .facility-image { height: 360px; font-size: 4.25rem; }
+    #fasilitas .facility-content h3 { font-size: 1.625rem; }
+    #fasilitas .facility-content p { font-size: 1.1rem; }
+}
+
+.timeline-tag {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(16px);
+}
+
+/* Light mode colors */
+body[data-theme="light"] .timeline-badge { background: rgba(59,130,246,0.9); color: #ffffff; }
+body[data-theme="light"] .timeline-tag { background: rgba(15,23,42,0.06); color: #0f172a; }
+
+/* Dark mode colors */
+body[data-theme="dark"] .timeline-badge { background: rgba(147,197,253,0.85); color: #0f172a; }
+body[data-theme="dark"] .timeline-tag { background: rgba(148,163,184,0.18); color: #e2e8f0; }
+
+@media (max-width: 640px) {
+    .timeline-badge { top: -10px; left: -10px; width: 32px; height: 32px; font-size: 0.75rem; }
+    .timeline-tag { top: -8px; right: 10px; font-size: 0.7rem; }
+}

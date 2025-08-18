@@ -430,6 +430,45 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize theme on page load
     initializeTheme();
+
+    // ===== RANDOMIZE DECORATIVE BUBBLES (exclude #keunggulan) =====
+    function randomBetween(min, max) { return Math.random() * (max - min) + min; }
+    function debounce(fn, wait) { let t; return function() { clearTimeout(t); t = setTimeout(() => fn.apply(this, arguments), wait); }; }
+    function randomizeBubbles() {
+        const containers = document.querySelectorAll('.section-bubbles');
+        containers.forEach(container => {
+            // Randomize all sections including Keunggulan
+
+            const isMobile = window.innerWidth < 640;
+            const minSize = isMobile ? 48 : 68;
+            const maxSize = isMobile ? 120 : 180;
+            const bubbles = container.querySelectorAll('.bubble');
+            bubbles.forEach((bubble) => {
+                const size = Math.round(randomBetween(minSize, maxSize));
+                const dur = randomBetween(14, 24).toFixed(1);
+                const delay = randomBetween(0, 2.2).toFixed(2);
+                const top = randomBetween(6, 84).toFixed(2);
+                const left = randomBetween(6, 92).toFixed(2);
+
+                bubble.style.setProperty('--size', size + 'px');
+                bubble.style.setProperty('--dur', dur + 's');
+                bubble.style.setProperty('--delay', delay + 's');
+                bubble.style.setProperty('--ratio', randomBetween(1.1, 1.5).toFixed(2));
+                bubble.style.setProperty('--rot', (randomBetween(-20, 20)).toFixed(1) + 'deg');
+                // Add subtle non-circular deformation
+                bubble.style.setProperty('--skx', (randomBetween(-6, 6)).toFixed(1) + 'deg');
+                bubble.style.setProperty('--sky', (randomBetween(-4, 4)).toFixed(1) + 'deg');
+                bubble.style.top = top + '%';
+                bubble.style.left = left + '%';
+                bubble.style.right = '';
+                bubble.style.bottom = '';
+            });
+        });
+    }
+
+    // Run once on load and on resize (debounced)
+    randomizeBubbles();
+    window.addEventListener('resize', debounce(randomizeBubbles, 300));
     
     // ===== INITIALIZATION =====
     console.log('SMKN 4 Bandung Landing Page loaded successfully!');
@@ -461,6 +500,204 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // ===== FACILITY PHOTO LIGHTBOX =====
+    (function setupFacilityLightbox() {
+        function ensureLightbox() {
+            let lb = document.getElementById('photo-lightbox');
+            if (lb) return lb;
+            lb = document.createElement('div');
+            lb.id = 'photo-lightbox';
+            lb.className = 'photo-lightbox hidden';
+            lb.innerHTML = `
+                <div class="photo-lightbox__backdrop"></div>
+                <div class="photo-lightbox__content">
+                    <button class="photo-lightbox__close" aria-label="Tutup">&times;</button>
+                    <img class="photo-lightbox__img" alt="Preview gambar fasilitas"/>
+                    <div class="photo-lightbox__caption"></div>
+                </div>
+            `;
+            document.body.appendChild(lb);
+            const close = () => hideLightbox();
+            lb.querySelector('.photo-lightbox__backdrop').addEventListener('click', close);
+            lb.querySelector('.photo-lightbox__close').addEventListener('click', close);
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+            return lb;
+        }
+
+        function extractBackgroundUrl(el) {
+            const bg = getComputedStyle(el).backgroundImage;
+            if (!bg || bg === 'none') return '';
+            const match = bg.match(/url\(["']?([^"')]+)["']?\)/i);
+            return match ? match[1] : '';
+        }
+
+        function showLightbox(url, caption) {
+            const lb = ensureLightbox();
+            const img = lb.querySelector('.photo-lightbox__img');
+            const cap = lb.querySelector('.photo-lightbox__caption');
+            img.src = url;
+            cap.textContent = caption || '';
+            lb.classList.remove('hidden');
+            // prevent background scroll
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideLightbox() {
+            const lb = document.getElementById('photo-lightbox');
+            if (!lb) return;
+            lb.classList.add('hidden');
+            // restore scroll
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+        }
+
+        const cards = document.querySelectorAll('.photo-stack .card');
+        if (cards.length === 0) return;
+        cards.forEach((card) => {
+            card.style.pointerEvents = 'auto';
+            card.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const imgEl = card.querySelector('img');
+                const dataUrl = card.getAttribute('data-image');
+                const bgUrl = extractBackgroundUrl(card);
+                const url = dataUrl || (imgEl && imgEl.src) || bgUrl;
+                if (!url) return;
+                // Optional caption: use facility title nearby
+                const facilityCard = card.closest('.facility-card');
+                const caption = facilityCard ? (facilityCard.querySelector('.facility-content h3')?.textContent || '') : '';
+                showLightbox(url, caption);
+            });
+        });
+
+        // Mobile tap to expand/collapse the stack
+        const stacks = document.querySelectorAll('.photo-stack');
+        stacks.forEach((stack) => {
+            stack.addEventListener('click', (e) => {
+                // If user tapped a card (to open lightbox), don't toggle state
+                const tappedCard = e.target.closest && e.target.closest('.card');
+                if (!tappedCard) {
+                    stack.classList.toggle('is-active');
+                }
+            });
+        });
+    })();
+
+    // ===== FACILITY GALLERY (Read More) =====
+    (function setupFacilityGallery() {
+        function ensureGallery() {
+            let g = document.getElementById('photo-gallery');
+            if (g) return g;
+            g = document.createElement('div');
+            g.id = 'photo-gallery';
+            g.className = 'photo-gallery hidden';
+            g.innerHTML = `
+                <div class="photo-gallery__backdrop"></div>
+                <div class="photo-gallery__content">
+                    <div class="photo-gallery__header">
+                        <h3 class="photo-gallery__title"></h3>
+                        <button class="photo-gallery__close" aria-label="Tutup">&times;</button>
+                    </div>
+                    <div class="photo-gallery__meta"></div>
+                    <div class="photo-gallery__grid"></div>
+                </div>
+            `;
+            document.body.appendChild(g);
+            const close = () => hideGallery();
+            g.querySelector('.photo-gallery__backdrop').addEventListener('click', close);
+            g.querySelector('.photo-gallery__close').addEventListener('click', close);
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+            return g;
+        }
+
+        function extractBackgroundUrl(el) {
+            const bg = getComputedStyle(el).backgroundImage;
+            if (!bg || bg === 'none') return '';
+            const match = bg.match(/url\(["']?([^"')]+)["']?\)/i);
+            return match ? match[1] : '';
+        }
+
+        function collectStackUrls(root) {
+            const urls = [];
+            if (!root) return urls;
+            const cards = root.querySelectorAll('.photo-stack .card');
+            if (cards.length > 0) {
+                cards.forEach((c) => {
+                    const img = c.querySelector('img');
+                    const dataUrl = c.getAttribute('data-image');
+                    const bgUrl = extractBackgroundUrl(c);
+                    const url = dataUrl || (img && img.src) || bgUrl;
+                    if (url) urls.push(url);
+                });
+                return urls;
+            }
+            // Fallback: single header image
+            const headerImg = root.querySelector('img');
+            if (headerImg && headerImg.src) urls.push(headerImg.src);
+            return urls;
+        }
+
+        function showGallery(title, urls) {
+            const g = ensureGallery();
+            const titleEl = g.querySelector('.photo-gallery__title');
+            const metaEl = g.querySelector('.photo-gallery__meta');
+            const gridEl = g.querySelector('.photo-gallery__grid');
+            titleEl.textContent = title || 'Gallery';
+            metaEl.textContent = `${urls.length} gambar`;
+            gridEl.innerHTML = '';
+            urls.forEach((u) => {
+                const item = document.createElement('div');
+                item.className = 'photo-gallery__item';
+                item.innerHTML = `<img src="${u}" alt="gallery"/>`;
+                // Clicking a thumbnail opens existing lightbox
+                item.addEventListener('click', () => {
+                    const evt = new CustomEvent('open-lightbox', { detail: { url: u, caption: title } });
+                    document.dispatchEvent(evt);
+                });
+                gridEl.appendChild(item);
+            });
+            g.classList.remove('hidden');
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideGallery() {
+            const g = document.getElementById('photo-gallery');
+            if (!g) return;
+            g.classList.add('hidden');
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+        }
+
+        // Bridge event to open existing lightbox from gallery
+        document.addEventListener('open-lightbox', (e) => {
+            const { url, caption } = e.detail || {};
+            if (!url) return;
+            // Reuse previously defined lightbox functions if available
+            const lb = document.getElementById('photo-lightbox');
+            if (lb) {
+                const img = lb.querySelector('.photo-lightbox__img');
+                const cap = lb.querySelector('.photo-lightbox__caption');
+                img.src = url;
+                cap.textContent = caption || '';
+                lb.classList.remove('hidden');
+            }
+        });
+
+        // Attach listeners to Read More buttons inside fasilitas grid
+        const readMoreButtons = document.querySelectorAll('#fasilitas .grid button');
+        readMoreButtons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const cardRoot = btn.closest('.relative.flex');
+                const title = cardRoot ? (cardRoot.querySelector('h5')?.textContent || 'Gallery') : 'Gallery';
+                const urls = collectStackUrls(cardRoot);
+                if (urls.length === 0) return;
+                showGallery(title, urls);
+            });
+        });
+    })();
 });
 
 // ===== JQUERY RIPPLES EFFECT =====

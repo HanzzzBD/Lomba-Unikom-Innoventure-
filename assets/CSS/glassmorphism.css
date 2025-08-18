@@ -138,9 +138,7 @@ p {
     left: 100%;
 }
 
-.glass-button:hover {
 
-}
 
 /* ===== WAVE DIVIDERS ===== */
 .wave-divider {
@@ -744,4 +742,86 @@ p {
     .hero-overlay {
         display: none !important;
     }
+}
+
+/* ===== SECTION DECORATIVE BUBBLES (theme-aware) ===== */
+.section-bubbles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.section-bubbles .bubble {
+    position: absolute;
+    width: var(--size, 120px);
+    height: calc(var(--size, 120px) * var(--ratio, 1.25));
+    border-radius: 9999px;
+    opacity: 0.28;
+    filter: blur(1.2px);
+    mix-blend-mode: overlay;
+    animation: bubbleFloat var(--dur, 16s) ease-in-out var(--delay, 0s) infinite;
+    border: 1px solid var(--bubble-border, rgba(255,255,255,0.35));
+    transform: rotate(var(--rot, -12deg)) skew(var(--skx, 0deg), var(--sky, 0deg));
+    box-shadow: 0 16px 48px var(--bubble-shadow, rgba(0,0,0,0.08)), inset 0 2px 8px rgba(255,255,255,0.2);
+}
+
+@keyframes bubbleFloat {
+    0% { transform: translateY(0) translateX(0) scale(1); }
+    50% { transform: translateY(-16px) translateX(6px) scale(1.02); }
+    100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* Light/Dark palette */
+body[data-theme="light"] .section-bubbles .bubble {
+    background:
+        radial-gradient(ellipse at 30% 28%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.25) 22%, rgba(255,255,255,0.08) 36%, transparent 42%),
+        radial-gradient(ellipse at 60% 70%, rgba(59,130,246,0.22) 0%, rgba(139,92,246,0.14) 46%, transparent 66%);
+    --bubble-shadow: rgba(59,130,246,0.22);
+    --bubble-border: rgba(255,255,255,0.35);
+}
+
+body[data-theme="dark"] .section-bubbles .bubble {
+    background:
+        radial-gradient(ellipse at 30% 28%, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.2) 22%, rgba(255,255,255,0.06) 36%, transparent 42%),
+        radial-gradient(ellipse at 60% 70%, rgba(147,197,253,0.2) 0%, rgba(167,139,250,0.14) 46%, transparent 66%);
+    --bubble-shadow: rgba(147,197,253,0.24);
+    --bubble-border: rgba(147,197,253,0.35);
+}
+
+/* Specular highlights for droplet effect */
+.section-bubbles .bubble::before {
+    content: '';
+    position: absolute;
+    top: 16%;
+    left: 24%;
+    width: calc(var(--size) * 0.18);
+    height: calc(var(--size) * 0.18);
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.35) 60%, rgba(255,255,255,0) 100%);
+    filter: blur(0.6px);
+    opacity: 0.9;
+}
+
+.section-bubbles .bubble::after {
+    content: '';
+    position: absolute;
+    top: 36%;
+    left: 18%;
+    width: calc(var(--size) * 0.58);
+    height: calc(var(--size) * 0.22);
+    border-radius: 9999px;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.05) 70%, rgba(255,255,255,0) 100%);
+    transform: rotate(-18deg);
+    opacity: 0.6;
+}
+
+/* Ensure main content stays above bubbles */
+/* Keep section content above bubbles, but exclude the bubbles layer itself */
+.section-light > :not(.section-bubbles),
+.section-dark > :not(.section-bubbles),
+.section-accent > :not(.section-bubbles) {
+    position: relative;
+    z-index: 3;
 }
