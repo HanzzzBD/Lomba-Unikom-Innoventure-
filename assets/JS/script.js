@@ -5,9 +5,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
+    function openMobileMenu() {
+        mobileMenu.classList.remove('menu-bounce-in', 'menu-bounce-out');
+        mobileMenu.classList.remove('hidden');
+        void mobileMenu.offsetWidth; // reflow
+        mobileMenu.classList.add('menu-bounce-in');
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('menu-bounce-in', 'menu-bounce-out');
+        void mobileMenu.offsetWidth; // reflow to ensure animation triggers
+        mobileMenu.classList.add('menu-bounce-out');
+        let didHide = false;
+        const onEnd = function() {
+            mobileMenu.removeEventListener('animationend', onEnd);
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('menu-bounce-out');
+            didHide = true;
+        };
+        mobileMenu.addEventListener('animationend', onEnd, { once: true });
+        // Fallback in case animationend doesn't fire
+        setTimeout(() => {
+            if (!didHide) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('menu-bounce-out');
+            }
+        }, 400);
+    }
+
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) openMobileMenu(); else closeMobileMenu();
+        });
+        // Click outside to close
+        document.addEventListener('click', function(e) {
+            const clickInsideMenu = mobileMenu.contains(e.target);
+            const clickOnButton = mobileMenuButton.contains(e.target);
+            if (!clickInsideMenu && !clickOnButton && !mobileMenu.classList.contains('hidden')) {
+                closeMobileMenu();
+            }
         });
     }
 
@@ -26,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
                 
-                // Close mobile menu if open
+                // Close mobile menu with animation if open
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                    closeMobileMenu();
                 }
             }
         });
@@ -312,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== KEYBOARD NAVIGATION =====
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
+            closeMobileMenu();
         }
     });
 
@@ -645,4 +682,34 @@ function createCustomRippleEffect() {
         }
     };
 }
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.AOS) {
+      AOS.init({
+        duration: 700,
+        once: false,        // animasi bisa memutar ulang saat kembali masuk viewport
+        mirror: true,       // aktifkan fade-out saat elemen keluar viewport
+        offset: 80,
+        easing: 'ease-out-cubic'
+      });
+      // Pastikan posisi awal/akhir terdeteksi dengan benar setelah semua asset termuat
+      window.addEventListener('load', () => {
+        AOS.refreshHard();
+      });
+    }
+
+    // Force fade-out: hapus class aos-animate saat elemen keluar viewport
+    const observed = Array.from(document.querySelectorAll('[data-aos]'));
+    if (observed.length > 0) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+          } else {
+            entry.target.classList.remove('aos-animate');
+          }
+        });
+      }, { threshold: 0.15 });
+      observed.forEach((el) => io.observe(el));
+    }
+});
 

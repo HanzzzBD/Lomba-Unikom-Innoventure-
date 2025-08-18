@@ -270,3 +270,69 @@ body {
         padding-top: 1rem !important;
     }
 }
+
+/* ===== MOBILE MENU GLASS + THEME-AWARE COLORS ===== */
+#mobile-menu {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transform-origin: top center;
+}
+
+/* Light mode appearance */
+body[data-theme="light"] #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-top-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+/* Dark mode appearance */
+body[data-theme="dark"] #mobile-menu {
+    background-color: rgba(15, 23, 42, 0.9) !important;
+    border-top-color: rgba(71, 85, 105, 0.5) !important;
+}
+
+/* Ensure readable link colors inside menu for both themes */
+body[data-theme="light"] #mobile-menu a { color: #0f172a !important; }
+body[data-theme="dark"] #mobile-menu a { color: #f8fafc !important; }
+
+/* Subtle hover for links inside glass menu */
+#mobile-menu a:hover {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+}
+
+/* Mobile theme toggle spacing in the drawer */
+#mobile-menu .mobile-theme-toggle { margin-top: 0.25rem; }
+
+/* ===== MOBILE MENU BOUNCE ANIMATIONS ===== */
+@keyframes mobileMenuBounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(2px) scaleY(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes mobileMenuBounceOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.98);
+    }
+}
+
+.menu-bounce-in {
+    animation: mobileMenuBounceIn 380ms cubic-bezier(.34,1.56,.64,1) both;
+}
+
+.menu-bounce-out {
+    animation: mobileMenuBounceOut 220ms ease both;
+}
