@@ -368,3 +368,12 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
 }
 .photo-gallery__item { border-radius: 10px; overflow: hidden; background: #f1f5f9; cursor: zoom-in; }
 .photo-gallery__item img { width: 100%; height: 140px; object-fit: cover; display: block; }
+
+/* ===== keunggulan marque==== */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
