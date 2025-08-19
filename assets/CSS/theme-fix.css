@@ -201,13 +201,15 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
 /* ===== FASILITAS: Photo Stack Cards (Uiverse.io by Sharkotech - adapted) ===== */
 .photo-stack {
     position: relative;
-    width: 200px;
+    top: 4px;
+    width: 380px;
     height: 160px;
     margin: 0 auto;
 }
 
 .photo-stack .card {
-    width: 200px;
+    top: 4px;
+    width: 380px;
     height: 160px;
     position: absolute;
     cursor: pointer;
