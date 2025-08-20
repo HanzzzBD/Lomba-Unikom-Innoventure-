@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="assets/CSS/footer-fix.css">
     <!-- Liquid Glass Button CSS -->
     <link rel="stylesheet" href="assets/CSS/liquid-glass-button.css">
+    <!-- Keunggulan Marquee CSS -->
+    <link rel="stylesheet" href="assets/CSS/keunggulan-marquee.css">
     <!-- AOS Animations CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
@@ -364,64 +366,226 @@
     
     <!-- ===== KEUNGGULAN ===== -->
     <section id="keunggulan" class="py-20 overflow-hidden relative bg-transparent">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
-    <div class="text-center mb-16 animate-fade-in">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Keunggulan Kami</h2>
-      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-    </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="900">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Keunggulan Kami</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        </div>
 
     <!-- MARQUEE -->
-    <div class="relative w-full overflow-hidden group bg-transparent">
-      <div class="flex w-max animate-marquee space-x-6 sm:space-x-8 group-hover:[animation-play-state:paused]">
-        
-        <!-- Card 1 -->
-        <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-          </div>
-          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
-          <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
-        </div>
+    <div class="relative w-full bg-transparent marquee-themed keunggulan-marquee">
+        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track speed-15">
+            
+            <!-- Card 1 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
 
-        <!-- Card 2 -->
-        <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
-          </div>
-          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
-          <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
-        </div>
+            <!-- Card 2 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
+            </div>
 
-        <!-- Card 3 -->
-        <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-          </div>
-          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
-          <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
-        </div>
+            <!-- Card 3 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
+            </div>
 
-        <!-- Card 4 -->
-        <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-          </div>
-          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
-          <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
-        </div>
+            <!-- Card 4 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
+            </div>
 
-        <!-- Duplicate biar looping smooth -->
-        <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-          </div>
-          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
-          <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            <!-- Duplicate biar looping smooth: gandakan semua kartu -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
+            </div>
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
+            </div>
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
+            </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
+    <div class="relative w-full bg-transparent keunggulan-marquee">
+        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track reverse speed-21">
+            
+            <!-- Card 1 -->
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
+            </div>
+
+            <!-- Duplicate biar looping smooth: gandakan semua kartu -->
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
+            </div>
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
+            </div>
+            <div class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third MARQUEE: normal with theme-aware styling -->
+    <div class="relative w-full bg-transparent marquee-themed keunggulan-marquee">
+        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track speed-15">
+            <!-- Card 1 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-blue-100">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-purple-100">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Teaching Factory</h3>
+                <p class="text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-green-100">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Praktek Kerja Industri</h3>
+                <p class="text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-yellow-100">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
+            </div>
+
+            <!-- Duplicate for smooth loop -->
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-blue-100">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-purple-100">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Teaching Factory</h3>
+                <p class="text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
+            </div>
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-green-100">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Praktek Kerja Industri</h3>
+                <p class="text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
+            </div>
+            <div class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-yellow-100">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Wave Divider -->
     <div class="wave-divider"></div>
