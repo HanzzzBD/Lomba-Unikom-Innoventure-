@@ -212,13 +212,13 @@
     <div class="wave-divider"></div>
 
     <!-- ===== TENTANG ===== -->
-    <section id="tentang" class="relative py-24 bg-fixed bg-cover "
+    <section id="tentang" class="relative py-24 bg-fixed bg-cover"
         style="background-image: url('assets/img/bg-smkn4bdg.png');">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-white/80 md:bg-white/70 backdrop-blur-sm"></div>
 
         <!-- Side rails statistik (desktop) -->
-        <div class="hidden xl:flex absolute inset-y-0 left-4 xl:left-8 z-10 flex-col justify-center gap-6">
+        <div class="hidden xl:flex absolute inset-y-0 left-3 xl:-left-4 z-10 flex-col justify-center gap-6 z-50">
             <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
                 data-aos="fade-right" data-aos-delay="0">
                 <div class="flex items-center gap-4 flex-row-reverse">
@@ -242,7 +242,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden xl:flex absolute inset-y-0 right-4 xl:right-8 z-10 flex-col justify-center gap-6">
+        <div class="hidden xl:flex absolute inset-y-0 right-4 xl:-right-4 z-10 flex-col justify-center gap-6 z-50">
             <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
                 data-aos="fade-left" data-aos-delay="0">
                 <div class="flex items-center gap-4">
@@ -340,8 +340,8 @@
             </div>
 
             <!-- Bagian 1: Keunggulan (di bawah timeline) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
-                <div class="group bg-white shadow-lg rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+            <div class="grid grid-cols-1 grid-cols-8 grid-rows-3 gap-4 md:gap-8 mb-16">
+                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-2 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
                     <div
                         class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
@@ -350,16 +350,7 @@
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Akreditasi A</h3>
                     <p class="text-gray-900">Seluruh program keahlian terakreditasi A dari BAN-SM.</p>
                 </div>
-                <div class="group bg-white shadow-lg rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
-                        <i class="fas fa-chalkboard-teacher text-2xl md:text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Guru Berpengalaman</h3>
-                    <p class="text-gray-900">Pembelajaran dipandu pengajar profesional dan bersertifikat.</p>
-                </div>
-                <div class="group bg-white shadow-lg rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-4 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
@@ -368,7 +359,7 @@
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Prestasi Tinggi</h3>
                     <p class="text-gray-900">Siswa meraih penghargaan tingkat daerah hingga nasional.</p>
                 </div>
-                <div class="group bg-white shadow-lg rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-6 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
@@ -381,10 +372,10 @@
 
             <!-- Bagian 2: Statistik (Glass Effect) -->
             <!-- Mobile/Tablet: grid biasa -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:hidden ">
                 <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
                     data-aos="fade-up" data-aos-delay="0">
-                    <div class="flex items-center gap-4 mb-4">
+                    <div class="flex items-center gap-4 mb-2">
                         <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
                             <i class="fas fa-users"></i></div>
                         <div>
@@ -395,7 +386,7 @@
                 </div>
                 <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-4 mb-4">
+                    <div class="flex items-center gap-4 mb-2">
                         <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
                             <i class="fas fa-chalkboard-teacher"></i></div>
                         <div>
@@ -406,7 +397,7 @@
                 </div>
                 <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-4 mb-4 flex-row-reverse">
+                    <div class="flex items-center gap-4 mb-2 flex-row-reverse">
                         <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
                             <i class="fas fa-building"></i></div>
                         <div class="text-right">
