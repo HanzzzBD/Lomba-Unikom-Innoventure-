@@ -47,10 +47,10 @@
   cursor: pointer;
 }
 .basic-marquee-1 {
-  animation: marquee 15s linear infinite;
+  animation: marquee 15.3s linear infinite;
 }
 .basic-marquee-2 {
-  animation: marquee 21s linear infinite;
+  animation: marquee 21.3s linear infinite;
 }
 .benefits {
   display: flex;
@@ -92,14 +92,11 @@
   gap: 10px;
   animation-name: ku-marquee;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: linear ;
 }
-.keunggulan-track.reverse { 
-  animation-name: ku-marquee-reverse;
-  animation-duration: 35s;
- }
-.keunggulan-track.speed-15 { animation-duration: 35s; }
-.keunggulan-track.speed-21 { animation-duration: 35s; }
+.keunggulan-track.reverse { animation-name: ku-marquee-reverse; }
+.keunggulan-track.speed-15 { animation-duration: 15s; }
+.keunggulan-track.speed-21 { animation-duration: 21s; }
 .keunggulan-marquee:hover .keunggulan-track { animation-play-state: paused; }
 
 .basic-marquee svg {
@@ -114,16 +111,116 @@
   align-items: center;
   justify-content: center;
 }
-.achievement-badge{
-    display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #fbbf24;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
+.cls-1 {
+  fill: #1ab7ea;
+}
+
+.cls-1,
+.cls-2 {
+  fill-rule: evenodd;
+}
+
+.cls-2 {
+  fill: #fff;
+}
+
+.cls-3 {
+  fill: #ee8208;
+  fill-rule: evenodd;
+}
+
+.cls-4 {
+  fill: #fff;
+}
+
+.cls-5,
+.cls-6 {
+  fill-rule: evenodd;
+}
+
+.cls-5 {
+  fill: #48dd55;
+}
+.cls-6 {
+  fill: #fff;
+}
+
+.cls-7 {
+  fill: #0a66c2;
+}
+
+.cls-7,
+.cls-8 {
+  fill-rule: evenodd;
+}
+
+.cls-8 {
+  fill: #fff;
+}
+
+.cls-9 {
+  fill: #10b7f4;
+}
+
+.cls-9,
+.cls-10 {
+  fill-rule: evenodd;
+}
+
+.cls-10 {
+  fill: #fff;
+}
+
+.cls-11 {
+  fill: #1da1f2;
+}
+
+.cls-11,
+.cls-12 {
+  fill-rule: evenodd;
+}
+
+.cls-12 {
+  fill: #fff;
+}
+
+.cls-13 {
+  fill: #ea4c89;
+}
+
+.cls-13,
+.cls-14 {
+  fill-rule: evenodd;
+}
+
+.cls-14 {
+  fill: #fff;
+}
+
+.cls-15 {
+  fill: #1769ff;
+}
+
+.cls-15,
+.cls-16 {
+  fill-rule: evenodd;
+}
+
+.cls-16 {
+  fill: #fff;
+}
+
+.cls-17 {
+  fill: #f26522;
+}
+
+.cls-17,
+.cls-18 {
+  fill-rule: evenodd;
+}
+
+.cls-18 {
+  fill: #fff;
 }
 
 
