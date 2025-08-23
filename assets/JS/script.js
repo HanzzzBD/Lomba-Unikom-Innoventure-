@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== SMOOTH SCROLLING =====
+    // ===== SMOOTH SCROLLING (COMMENTED OUT - CONFLICTS WITH NEW SYSTEM) =====
+    /*
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -70,150 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    */
 
-    // ===== LIQUID NAVIGATION SYSTEM =====
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.liquid-nav-link');
-    const liquidIndicator = document.getElementById('liquid-indicator');
-    const brandContainer = document.querySelector('.brand-liquid-container');
-    
-    // Initialize liquid indicator position
-    function initializeLiquidIndicator() {
-        if (liquidIndicator && navLinks.length > 0) {
-            // Start with first nav link (Beranda) instead of brand container
-            const firstNavLink = navLinks[0];
-            if (firstNavLink) {
-                const linkRect = firstNavLink.getBoundingClientRect();
-                const containerRect = firstNavLink.closest('.nav-links-liquid-container').getBoundingClientRect();
-                
-                // Calculate relative position within the container
-                const relativeLeft = linkRect.left - containerRect.left;
-                const targetWidth = linkRect.width;
-                
-                liquidIndicator.style.width = `${targetWidth}px`;
-                liquidIndicator.style.left = `${relativeLeft}px`;
-                liquidIndicator.classList.add('active');
-                
-                // Set first nav link as active initially
-                firstNavLink.classList.add('active');
-                
-                console.log('Liquid indicator initialized:', {
-                    width: targetWidth,
-                    left: relativeLeft,
-                    linkWidth: linkRect.width,
-                    containerLeft: containerRect.left
-                });
-            }
-        }
-    }
-    
-    // Update liquid indicator position with smooth animation
-    function updateLiquidIndicator(targetLink) {
-        if (!liquidIndicator || !targetLink) return;
-        
-        const container = targetLink.closest('.nav-links-liquid-container');
-        if (!container) return;
-        
-        const linkRect = targetLink.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        
-        // Calculate relative position within the container
-        const relativeLeft = linkRect.left - containerRect.left;
-        const targetWidth = linkRect.width;
-        
-        console.log('Updating liquid indicator:', {
-            targetLink: targetLink.textContent,
-            width: targetWidth,
-            left: relativeLeft,
-            linkWidth: linkRect.width,
-            containerLeft: containerRect.left
-        });
-        
-        // Add bounce effect
-        liquidIndicator.classList.add('active');
-        
-        // Animate liquid indicator
-        liquidIndicator.style.width = `${targetWidth}px`;
-        liquidIndicator.style.left = `${relativeLeft}px`;
-        
-        // Remove bounce class after animation
-        setTimeout(() => {
-            liquidIndicator.classList.remove('active');
-        }, 600);
-    }
-    
-    // Update active navigation with liquid effect
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                        updateLiquidIndicator(link);
-                    }
-                });
-                
-                // Update brand container if on beranda section
-                if (brandContainer) {
-                    if (sectionId === 'beranda') {
-                        brandContainer.classList.add('active');
-                    } else {
-                        brandContainer.classList.remove('active');
-                    }
-                }
-            }
-        });
-    }
-    
-    // Initialize liquid indicator on page load
-    setTimeout(initializeLiquidIndicator, 100);
-    
-    // Add resize listener to recalculate positions
-    window.addEventListener('resize', function() {
-        setTimeout(initializeLiquidIndicator, 100);
-    });
-    
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Add click event for smooth liquid indicator movement
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                // Update liquid indicator immediately on click
-                updateLiquidIndicator(this);
-                
-                // Smooth scroll to section
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-                
-                // Update active state
-                navLinks.forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-                this.classList.add('active');
-                
-                // Close mobile menu if open
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            }
-        });
-    });
+    // ===== LIQUID NAVIGATION SYSTEM REMOVED - REPLACED BY NEW SYSTEM BELOW =====
 
     // ===== INTERSECTION OBSERVER ANIMATIONS =====
     const observerOptions = {
@@ -700,6 +560,169 @@ document.addEventListener('DOMContentLoaded', function() {
     })();
 });
 
+// ===== NEW LIQUID NAVIGATION SYSTEM =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing new liquid navigation system...');
+    
+    function initLiquidNavigation() {
+        const navContainer = document.querySelector('.nav-links-liquid-container');
+        const indicator = document.getElementById('liquid-indicator');
+        const links = Array.from(document.querySelectorAll('.liquid-nav-link'));
+        
+        console.log('Elements found:', {
+            navContainer: !!navContainer,
+            indicator: !!indicator,
+            linksCount: links.length
+        });
+        
+        if (!indicator || !navContainer || links.length === 0) {
+            console.error('Required elements not found for liquid navigation, retrying...');
+            // Retry after a short delay
+            setTimeout(initLiquidNavigation, 200);
+            return;
+        }
+        
+        function moveIndicator(target) {
+            if (!indicator || !navContainer || !target) {
+                console.warn('moveIndicator: Missing required elements', {
+                    indicator: !!indicator,
+                    navContainer: !!navContainer,
+                    target: !!target
+                });
+                return;
+            }
+            
+            try {
+                const targetRect = target.getBoundingClientRect();
+                const parentRect = navContainer.getBoundingClientRect();
+                const width = Math.max(60, targetRect.width);
+                const left = targetRect.left - parentRect.left;
+                
+                console.log('Moving indicator:', {
+                    target: target.textContent,
+                    width: width,
+                    left: left,
+                    targetWidth: targetRect.width,
+                    targetLeft: targetRect.left,
+                    parentLeft: parentRect.left
+                });
+                
+                indicator.style.width = width + 'px';
+                indicator.style.left = left + 'px';
+                indicator.classList.add('active');
+            } catch (error) {
+                console.error('Error moving indicator:', error);
+            }
+        }
+        
+        // Find active link or default to first
+        let activeLink = document.querySelector('.liquid-nav-link.active');
+        if (!activeLink && links.length > 0) {
+            activeLink = links[0];
+            activeLink.classList.add('active');
+        }
+        
+        console.log('Active link:', activeLink ? activeLink.textContent : 'none');
+        
+        // Initialize indicator position
+        if (activeLink) {
+            moveIndicator(activeLink);
+        }
+        
+        links.forEach((link) => {
+            link.addEventListener('mouseenter', () => {
+                console.log('Mouse enter on:', link.textContent);
+                moveIndicator(link);
+            });
+            link.addEventListener('focus', () => {
+                console.log('Focus on:', link.textContent);
+                moveIndicator(link);
+            });
+            
+            // Add click event for smooth scrolling
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Click on:', this.textContent);
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Update liquid indicator immediately on click
+                    moveIndicator(this);
+                    
+                    // Smooth scroll to section
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    links.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        window.addEventListener('resize', () => {
+            console.log('Window resize detected');
+            const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
+            if (currentActive) {
+                moveIndicator(currentActive);
+            }
+        });
+        
+        if (navContainer) {
+            navContainer.addEventListener('mouseleave', () => {
+                console.log('Mouse leave nav container');
+                const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
+                if (currentActive) {
+                    moveIndicator(currentActive);
+                }
+            });
+        }
+        
+        // Add scroll-based active state management
+        const sections = document.querySelectorAll('section[id]');
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                            console.log('Scroll: Setting active link to:', link.textContent);
+                            moveIndicator(link);
+                        }
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        
+        console.log('New liquid navigation system initialized successfully!');
+    }
+    
+    // Start initialization with a small delay to ensure DOM is ready
+    setTimeout(initLiquidNavigation, 100);
+});
+
 // ===== JQUERY RIPPLES EFFECT =====
 $(document).ready(function() {
     console.log('jQuery loaded:', typeof $ !== 'undefined');
@@ -949,4 +972,198 @@ document.addEventListener('DOMContentLoaded', () => {
       observed.forEach((el) => io.observe(el));
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.AOS) {
+        // Responsive AOS configuration
+        const isMobile = window.innerWidth <= 768;
+        const isSmallMobile = window.innerWidth <= 480;
+        
+        AOS.init({
+            duration: isSmallMobile ? 400 : isMobile ? 500 : 700,
+            once: false,   // animasi mengulang saat masuk lagi
+            mirror: true,  // fade-out saat keluar viewport
+            offset: isMobile ? 60 : 80,
+            easing: 'ease-out-cubic',
+            delay: isMobile ? 0 : 0,
+            // Disable animations on very small screens for better performance
+            disable: isSmallMobile ? 'phone' : false
+        });
+        
+        // Refresh AOS on window resize for responsive behavior
+        window.addEventListener('resize', function() {
+            const newIsMobile = window.innerWidth <= 768;
+            const newIsSmallMobile = window.innerWidth <= 480;
+            
+            if (newIsSmallMobile !== isSmallMobile || newIsMobile !== isMobile) {
+                AOS.refresh();
+            }
+        });
+        
+        window.addEventListener('load', function () { 
+            AOS.refreshHard(); 
+        });
+    }
+});
 
+// ===== NEW LIQUID NAVIGATION SYSTEM =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing new liquid navigation system...');
+    
+    function initLiquidNavigation() {
+        const navContainer = document.querySelector('.nav-links-liquid-container');
+        const indicator = document.getElementById('liquid-indicator');
+        const links = Array.from(document.querySelectorAll('.liquid-nav-link'));
+        
+        console.log('Elements found:', {
+            navContainer: !!navContainer,
+            indicator: !!indicator,
+            linksCount: links.length
+        });
+        
+        if (!indicator || !navContainer || links.length === 0) {
+            console.error('Required elements not found for liquid navigation, retrying...');
+            // Retry after a short delay
+            setTimeout(initLiquidNavigation, 200);
+            return;
+        }
+        
+        function moveIndicator(target) {
+            if (!indicator || !navContainer || !target) {
+                console.warn('moveIndicator: Missing required elements', {
+                    indicator: !!indicator,
+                    navContainer: !!navContainer,
+                    target: !!target
+                });
+                return;
+            }
+            
+            try {
+                const targetRect = target.getBoundingClientRect();
+                const parentRect = navContainer.getBoundingClientRect();
+                const width = Math.max(60, targetRect.width);
+                const left = targetRect.left - parentRect.left;
+                
+                console.log('Moving indicator:', {
+                    target: target.textContent,
+                    width: width,
+                    left: left,
+                    targetWidth: targetRect.width,
+                    targetLeft: targetRect.left,
+                    parentLeft: parentRect.left
+                });
+                
+                indicator.style.width = width + 'px';
+                indicator.style.left = left + 'px';
+                indicator.classList.add('active');
+            } catch (error) {
+                console.error('Error moving indicator:', error);
+            }
+        }
+        
+        // Find active link or default to first
+        let activeLink = document.querySelector('.liquid-nav-link.active');
+        if (!activeLink && links.length > 0) {
+            activeLink = links[0];
+            activeLink.classList.add('active');
+        }
+        
+        console.log('Active link:', activeLink ? activeLink.textContent : 'none');
+        
+        // Initialize indicator position
+        if (activeLink) {
+            moveIndicator(activeLink);
+        }
+        
+        links.forEach((link) => {
+            link.addEventListener('mouseenter', () => {
+                console.log('Mouse enter on:', link.textContent);
+                moveIndicator(link);
+            });
+            link.addEventListener('focus', () => {
+                console.log('Focus on:', link.textContent);
+                moveIndicator(link);
+            });
+            
+            // Add click event for smooth scrolling
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Click on:', this.textContent);
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Update liquid indicator immediately on click
+                    moveIndicator(this);
+                    
+                    // Smooth scroll to section
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    links.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        window.addEventListener('resize', () => {
+            console.log('Window resize detected');
+            const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
+            if (currentActive) {
+                moveIndicator(currentActive);
+            }
+        });
+        
+        if (navContainer) {
+            navContainer.addEventListener('mouseleave', () => {
+                console.log('Mouse leave nav container');
+                const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
+                if (currentActive) {
+                    moveIndicator(currentActive);
+                }
+            });
+        }
+        
+        // Add scroll-based active state management
+        const sections = document.querySelectorAll('section[id]');
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                            console.log('Scroll: Setting active link to:', link.textContent);
+                            moveIndicator(link);
+                        }
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        
+        console.log('New liquid navigation system initialized successfully!');
+    }
+    
+    // Start initialization with a small delay to ensure DOM is ready
+    setTimeout(initLiquidNavigation, 100);
+});

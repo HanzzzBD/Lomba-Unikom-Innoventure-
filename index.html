@@ -190,11 +190,11 @@
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in"
                     style="animation-delay: 0.4s;">
-                    <a href="#daftar" class="glass-button animate-glow text-gray-900">
+                    <a href="#daftar" class="glass-button animate-glow text-slate-900">
                         <i class="fas fa-user-plus"></i>
                         Daftar Sekarang
                     </a>
-                    <a href="#virtual-tour" class="glass-button animate-glow text-gray-900" style="animation-delay: 0.2s;">
+                    <a href="#virtual-tour" class="glass-button animate-glow text-slate-900" style="animation-delay: 0.2s;">
                         <i class="fas fa-vr-cardboard"></i>
                         Kunjungi Virtual Tour
                     </a>
@@ -890,10 +890,10 @@
 
             <div class="max-w-6xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 ">
                         <div class="space-y-4 sm:space-y-6">
-                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Jelajahi Sekolah Kami</h3>
-                            <div class="space-y-3 sm:space-y-4">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">Jelajahi Sekolah Kami</h3>
+                            <div class="space-y-3 sm:space-y-4 ml-7">
                                 <div class="flex items-start">
                                     <i class="fas fa-building text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
                                     <div>
@@ -1045,16 +1045,36 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="footer-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="#beranda" class="brand-liquid-container-link">
-                        <div class="brand-liquid-container bg-transparent">
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center">
-                                <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
-                            </div>
-                            <div>
-                                <h1 class="text-xl font-bold text-gray-900">SMKN 4 Bandung</h1>
-                            </div>
+                    <div class="grid grid-cols-2 grid-rows-2 gap-2">
+                        <!-- Container SMKN 4 Bandung -->
+                        <div class="col-span-2 ">
+                            <a href="#beranda" class="brand-liquid-container-link">
+                                <div class="brand-liquid-container bg-transparent">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                                        <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
+                                    </div>
+                                    <div>
+                                        <h1 class="text-xl font-bold text-gray-900">SMKN 4 Bandung</h1>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+
+
+                        <!-- Container ORBIT dipindah ke bawah SMKN 4 Bandung -->
+                        <div class="col-span-2 row-start-2 ">
+                            <a href="#beranda" class="brand-liquid-container-link">
+                                <div class="brand-liquid-container bg-transparent">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                                        <img src="/assets/img/Logo_ORBIT.png" alt="logo SMKN 4 Bandung">
+                                    </div>
+                                    <div>
+                                        <h1 class="text-xl font-bold text-gray-900">ORBIT</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
                     <div class="space-y-4">
                         <h4 class="text-lg font-semibold">Kontak</h4>
@@ -1137,38 +1157,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/JS/script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.AOS) {
-                // Responsive AOS configuration
-                const isMobile = window.innerWidth <= 768;
-                const isSmallMobile = window.innerWidth <= 480;
-                
-                AOS.init({
-                    duration: isSmallMobile ? 400 : isMobile ? 500 : 700,
-                    once: false,   // animasi mengulang saat masuk lagi
-                    mirror: true,  // fade-out saat keluar viewport
-                    offset: isMobile ? 60 : 80,
-                    easing: 'ease-out-cubic',
-                    delay: isMobile ? 0 : 0,
-                    // Disable animations on very small screens for better performance
-                    disable: isSmallMobile ? 'phone' : false
-                });
-                
-                // Refresh AOS on window resize for responsive behavior
-                window.addEventListener('resize', function() {
-                    const newIsMobile = window.innerWidth <= 768;
-                    const newIsSmallMobile = window.innerWidth <= 480;
-                    
-                    if (newIsSmallMobile !== isSmallMobile || newIsMobile !== isMobile) {
-                        AOS.refresh();
-                    }
-                });
-                
-                window.addEventListener('load', function () { 
-                    AOS.refreshHard(); 
-                });
-            }
-        });
     </script>
 </body>
 
