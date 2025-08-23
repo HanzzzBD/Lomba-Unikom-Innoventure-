@@ -1,278 +1,949 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMKN 4 Bandung - Mencetak Lulusan Siap Kerja, Kreatif, dan Mandiri</title>
-    <meta name="description" content="SMKN 4 Bandung - Sekolah Menengah Kejuruan Negeri terbaik dengan akreditasi A dan berbagai program keahlian unggulan">
-    
+    <meta name="description"
+        content="SMKN 4 Bandung - Sekolah Menengah Kejuruan Negeri terbaik dengan akreditasi A dan berbagai program keahlian unggulan">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     
+    <!-- Icon SMKN 4 Bandung -->
+    <link rel="icon" href="assets/img/logo_smkn4bdg.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <!-- Glassmorphism Design System -->
+    <link rel="stylesheet" href="assets/CSS/glassmorphism.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/CSS/Style.css">
+    <link rel="stylesheet" href="assets/CSS/styles.css">
+    <!-- Theme Fixes CSS -->
+    <link rel="stylesheet" href="assets/CSS/theme-fix.css">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="assets/CSS/footer-fix.css">
+    <!-- Liquid Glass Button CSS -->
+    <link rel="stylesheet" href="assets/CSS/liquid-glass-button.css">
+    <!-- Keunggulan Marquee CSS -->
+    <link rel="stylesheet" href="assets/CSS/keunggulan-marquee.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
+
 <body class="font-['Inter'] text-gray-800">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <img src="" alt="" class="h-12 w-auto">
-                    <div class="ml-3">
-                        <h1 class="text-xl font-bold text-blue-600">SMKN 4</h1>
-                        <p class="text-sm text-gray-600">Bandung</p>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
+            <div class="navbar-liquid-container ">
+                <!-- Brand Section -->
+                <a href="#beranda" class="brand-liquid-container-link ">
+                    <div class="brand-liquid-container ">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                            <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900">SMKN 4</h1>
+                            <p class="text-sm text-gray-900">Bandung</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#beranda" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Beranda</a>
-                        <a href="#tentang" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Tentang</a>
-                        <a href="#keunggulan" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Keunggulan</a>
-                        <a href="#jurusan" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Jurusan</a>
-                        <a href="#fasilitas" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Fasilitas</a>
-                        <a href="#kontak" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontak</a>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative" >
+                    <a href="#beranda"
+                        class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
+                        data-section="beranda">
+                        Beranda
+                    </a>
+                    <a href="#tentang"
+                        class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
+                        data-section="tentang">
+                        Tentang
+                    </a>
+                    <a href="#keunggulan"
+                        class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
+                        data-section="keunggulan">
+                        Keunggulan
+                    </a>
+                    <a href="#jurusan"
+                        class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
+                        data-section="jurusan">
+                        Jurusan
+                    </a>
+                    <a href="#fasilitas"
+                        class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
+                        data-section="fasilitas">
+                        Fasilitas
+                    </a>
+
+                    <!-- Dark/Light Mode Toggle -->
+                    <div class="theme-toggle-container ml-4">
+                        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                            <div class="toggle-capsule">
+                                <div class="toggle-core">
+                                    <div class="toggle-icon toggle-icon-sun">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <div class="toggle-icon toggle-icon-moon">
+                                        <i class="fas fa-moon"></i>
+                                    </div>
+                                </div>
+                                <div class="toggle-rim"></div>
+                                <div class="toggle-bubbles">
+                                    <div class="bubble bubble-1"></div>
+                                    <div class="bubble bubble-2"></div>
+                                    <div class="bubble bubble-3"></div>
+                                </div>
+                                <div class="toggle-gel-ripples">
+                                    <div class="ripple ripple-1"></div>
+                                    <div class="ripple ripple-2"></div>
+                                </div>
+                            </div>
+                        </button>
                     </div>
+
+                    <!-- Liquid Indicator -->
+                    <div id="liquid-indicator"
+                        class="absolute bottom-0 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full transition-all duration-700 ease-out"
+                        style="width: 0; left: 0;"></div>
                 </div>
-                
+
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <button id="mobile-menu-button" class="text-white hover:text-blue-300 p-2">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#beranda" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Beranda</a>
-                <a href="#tentang" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Tentang</a>
-                <a href="#keunggulan" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Keunggulan</a>
-                <a href="#jurusan" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Jurusan</a>
-                <a href="#fasilitas" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Fasilitas</a>
-                <a href="#kontak" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Kontak</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden backdrop-blur-md border-t border-white/50">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#beranda"
+                    class="block px-3 py-2 text-gray-900 hover:text-blue-300 rounded-lg transition-colors">Beranda</a>
+                <a href="#tentang"
+                    class="block px-3 py-2 text-gray-900 hover:text-blue-300 rounded-lg transition-colors">Tentang</a>
+                <a href="#keunggulan"
+                    class="block px-3 py-2 text-gray-900 hover:text-blue-300 rounded-lg transition-colors">Keunggulan</a>
+                <a href="#jurusan"
+                    class="block px-3 py-2 text-gray-900 hover:text-blue-300 rounded-lg transition-colors">Jurusan</a>
+                <a href="#fasilitas"
+                    class="block px-3 py-2 text-gray-900 hover:text-blue-300 rounded-lg transition-colors">Fasilitas</a>
+
+                <!-- Mobile Theme Toggle -->
+                <div class="flex justify-center pt-4">
+                    <button id="mobile-theme-toggle" class="theme-toggle-btn mobile-theme-toggle"
+                        aria-label="Toggle dark/light mode">
+                        <div class="toggle-capsule">
+                            <div class="toggle-core">
+                                <div class="toggle-icon toggle-icon-sun">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="toggle-icon toggle-icon-moon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                            </div>
+                            <div class="toggle-rim"></div>
+                            <div class="toggle-bubbles">
+                                <div class="bubble bubble-1"></div>
+                                <div class="bubble bubble-2"></div>
+                                <div class="bubble bubble-3"></div>
+                            </div>
+                            <div class="toggle-gel-ripples">
+                                <div class="ripple ripple-1"></div>
+                                <div class="ripple ripple-2"></div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="beranda" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 overflow-hidden">
-        <div class="absolute inset-0 bg-black/40 z-10"></div>
-        <div class="absolute inset-0 bg-[url('assets/hero-bg.jpg')] bg-cover bg-center bg-no-repeat"></div>
-        
-        <div class="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-                Selamat Datang di <span class="text-blue-300">SMKN 4 Bandung</span>
-            </h1>
-            <p class="text-xl sm:text-2xl mb-8 text-blue-100 leading-relaxed animate-fade-in-delay">
-                Mencetak Lulusan Siap Kerja, Kreatif, dan Mandiri
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
-                <a href="#kontak" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    <i class="fas fa-user-plus mr-2"></i>Daftar Sekarang
-                </a>
-                <a href="#virtual-tour" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                    <i class="fas fa-vr-cardboard mr-2"></i>Kunjungi Virtual Tour
-                </a>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <a href="#tentang" class="text-white text-4xl">
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
-    </section>
+    <!-- ===== HERO SECTION ===== -->
+    <section id="beranda" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/video/SMKN_4_BANDUNG_2019-2020.mp4" type="video/mp4">
+        </video>
 
-    <!-- Tentang Kami -->
-    <section id="tentang" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+        <!-- Video Overlay -->
+        <div class="hero-video-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content text-center text-white z-20 relative px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="hero-title mb-6 leading-tight animate-fade-in">
+                    Selamat Datang di <span class="text-gradient">SMKN 4 Bandung</span>
+                </h1>
+                <p class="hero-subtitle text-white mb-8 leading-relaxed animate-fade-in" style="animation-delay: 0.2s;">
+                    Mencetak Lulusan Siap Kerja, Kreatif, dan Mandiri
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in"
+                    style="animation-delay: 0.4s;">
+                    <a href="#daftar" class="glass-button animate-glow text-gray-900">
+                        <i class="fas fa-user-plus"></i>
+                        Daftar Sekarang
+                    </a>
+                    <a href="#virtual-tour" class="glass-button animate-glow text-gray-900" style="animation-delay: 0.2s;">
+                        <i class="fas fa-vr-cardboard"></i>
+                        Kunjungi Virtual Tour
+                    </a>
+                </div>
             </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-gray-900">Sejarah SMKN 4 Bandung</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        SMKN 4 Bandung didirikan pada tahun 1962 dan telah mengalami berbagai transformasi penting. 
-                        Pada tahun 1969, sekolah ini pindah ke lokasi strategis di Jl. Kliningan No. 6, Bandung. 
-                        Kemudian pada tahun 1999/2000, sekolah ini berganti nama menjadi SMKN 4 Bandung dan 
-                        berhasil meraih akreditasi A, membuktikan kualitas pendidikan yang unggul.
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Dengan pengalaman lebih dari 60 tahun dalam dunia pendidikan, SMKN 4 Bandung telah 
-                        berhasil mencetak ribuan lulusan yang siap memasuki dunia kerja dan melanjutkan 
-                        pendidikan ke jenjang yang lebih tinggi.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="text-center p-6 bg-blue-50 rounded-xl">
-                        <div class="text-4xl font-bold text-blue-600 mb-2">1492</div>
-                        <div class="text-gray-600">Total Siswa</div>
-                    </div>
-                    <div class="text-center p-6 bg-purple-50 rounded-xl">
-                        <div class="text-4xl font-bold text-purple-600 mb-2">99</div>
-                        <div class="text-gray-600">Total Guru</div>
-                    </div>
-                    <div class="text-center p-6 bg-blue-50 rounded-xl">
-                        <div class="text-4xl font-bold text-blue-600 mb-2">32</div>
-                        <div class="text-gray-600">Ruang Belajar</div>
-                    </div>
-                    <div class="text-center p-6 bg-purple-50 rounded-xl">
-                        <div class="text-4xl font-bold text-purple-600 mb-2">8</div>
-                        <div class="text-gray-600">Ruang Praktik</div>
-                    </div>
-                </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
             </div>
         </div>
     </section>
 
-    <!-- Keunggulan -->
-    <section id="keunggulan" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Keunggulan Kami</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+
+    <!-- ===== TENTANG ===== -->
+    <section id="tentang" class="relative py-24 bg-fixed bg-cover"
+        style="background-image: url('assets/img/bg-smkn4bdg.png');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-white/80 md:bg-white/70 backdrop-blur-sm"></div>
+
+        <!-- Side rails statistik (desktop) -->
+        <div class="hidden xl:flex absolute inset-y-0 left-3 xl:-left-4 z-10 flex-col justify-center gap-6 z-50">
+            <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
+                data-aos="fade-right" data-aos-delay="0">
+                <div class="flex items-center gap-4 flex-row-reverse">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center"><i
+                            class="fas fa-building"></i></div>
+                    <div class="text-right">
+                        <div class="text-3xl font-extrabold text-slate-900">32</div>
+                        <div class="text-slate-700 font-medium">Ruang Belajar</div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-star text-2xl text-blue-600"></i>
+            <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
+                data-aos="fade-right" data-aos-delay="100">
+                <div class="flex items-center gap-4 flex-row-reverse">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center"><i
+                            class="fas fa-tools"></i></div>
+                    <div class="text-right">
+                        <div class="text-3xl font-extrabold text-slate-900">8</div>
+                        <div class="text-slate-700 font-medium">Ruang Praktik</div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">SMK Pusat Keunggulan</h3>
-                    <p class="text-gray-600">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam berbagai bidang keahlian.</p>
-                </div>
-                
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Teaching Factory</h3>
-                    <p class="text-gray-600">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja nyata kepada siswa.</p>
-                </div>
-                
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-briefcase text-2xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Praktek Kerja Industri</h3>
-                    <p class="text-gray-600">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia industri.</p>
-                </div>
-                
-                <div class="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-trophy text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Kelas Industri & Prestasi</h3>
-                    <p class="text-gray-600">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.</p>
                 </div>
             </div>
         </div>
+        <div class="hidden xl:flex absolute inset-y-0 right-4 xl:-right-4 z-10 flex-col justify-center gap-6 z-50">
+            <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
+                data-aos="fade-left" data-aos-delay="0">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center"><i
+                            class="fas fa-users"></i></div>
+                    <div>
+                        <div class="text-3xl font-extrabold text-slate-900">1492</div>
+                        <div class="text-slate-700 font-medium">Total Siswa</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
+                data-aos="fade-left" data-aos-delay="100">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center"><i
+                            class="fas fa-chalkboard-teacher"></i></div>
+                    <div>
+                        <div class="text-3xl font-extrabold text-slate-900">99+</div>
+                        <div class="text-slate-700 font-medium">Total Guru</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4 text-slate-900">Tentang Kami</h2>
+                <p class="text-lg md:text-xl max-w-4xl mx-auto text-gray-900">SMKN 4 Bandung berkomitmen melahirkan
+                    lulusan siap kerja, kreatif, dan mandiri melalui pengajaran berkualitas, dukungan industri, dan
+                    fasilitas modern.</p>
+            </div>
+
+            <!-- Timeline (sesuai tampilan foto) -->
+            <div class="max-w-5xl mx-auto mb-14">
+                <div class="grid grid-cols-1 md:grid-cols-5 items-center gap-6 md:gap-4">
+                    <!-- 1962 -->
+                    <div class="bg-white/80 border border-slate-100 rounded-2xl p-6 text-center shadow transition-all duration-300 hover:shadow-lg timeline-card"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <span class="timeline-badge">01</span>
+                        <span class="timeline-tag">Didirikan</span>
+                        <div
+                            class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4 text-blue-600">
+                            <i class="fas fa-calendar-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">1962</h3>
+                        <p class="text-gray-900 text-sm">SMKN 4 Bandung didirikan</p>
+                    </div>
+
+                    <!-- Connector 1 -->
+                    <div class="relative hidden md:flex items-center justify-center" aria-hidden="true">
+                        <div
+                            class="w-full h-[4px] bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-full">
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-angle-right text-purple-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- 1969 -->
+                    <div class="bg-white/80 border border-slate-100 rounded-2xl p-6 text-center shadow transition-all duration-300 hover:shadow-lg timeline-card"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <span class="timeline-badge">02</span>
+                        <span class="timeline-tag">Pindah Lokasi</span>
+                        <div
+                            class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4 text-blue-600">
+                            <i class="fas fa-map-marker-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">1969</h3>
+                        <p class="text-gray-900 text-sm">Pindah ke Jl. Kliningan No. 6, Bandung</p>
+                    </div>
+
+                    <!-- Connector 2 -->
+                    <div class="relative hidden md:flex items-center justify-center" aria-hidden="true">
+                        <div
+                            class="w-full h-[4px] bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-full">
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-angle-right text-purple-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- 1999/2000 -->
+                    <div class="bg-white/80 border border-slate-100 rounded-2xl p-6 text-center shadow transition-all duration-300 hover:shadow-lg timeline-card"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <span class="timeline-badge">03</span>
+                        <span class="timeline-tag">Ganti Nama</span>
+                        <div
+                            class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4 text-blue-600">
+                            <i class="fas fa-star text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">1999/2000</h3>
+                        <p class="text-gray-900 text-sm">Berganti nama menjadi SMKN 4 Bandung</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian 1: Keunggulan (di bawah timeline) -->
+            <div class="grid grid-cols-1 grid-cols-8 grid-rows-3 gap-4 md:gap-8 mb-16">
+                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-2 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
+                        <i class="fas fa-graduation-cap text-2xl md:text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Akreditasi A</h3>
+                    <p class="text-gray-900">Seluruh program keahlian terakreditasi A dari BAN-SM.</p>
+                </div>
+                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-4 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
+                        <i class="fas fa-trophy text-2xl md:text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Prestasi Tinggi</h3>
+                    <p class="text-gray-900">Siswa meraih penghargaan tingkat daerah hingga nasional.</p>
+                </div>
+                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-6 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
+                        <i class="fas fa-handshake text-2xl md:text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Link & Match</h3>
+                    <p class="text-gray-900">Kemitraan dengan industri untuk kurikulum relevan dan magang.</p>
+                </div>
+            </div>
+
+            <!-- Bagian 2: Statistik (Glass Effect) -->
+            <!-- Mobile/Tablet: grid biasa -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:hidden ">
+                <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
+                            <i class="fas fa-users"></i></div>
+                        <div>
+                            <div class="text-3xl font-extrabold text-slate-900">1492</div>
+                            <div class="text-gray-900 font-medium">Total Siswa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
+                            <i class="fas fa-chalkboard-teacher"></i></div>
+                        <div>
+                            <div class="text-3xl font-extrabold text-slate-900">99+</div>
+                            <div class="text-gray-900 font-medium">Total Guru</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-2 flex-row-reverse">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
+                            <i class="fas fa-building"></i></div>
+                        <div class="text-right">
+                            <div class="text-3xl font-extrabold text-slate-900">32</div>
+                            <div class="text-gray-900 font-medium">Ruang Belajar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-4 mb-4 flex-row-reverse">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
+                            <i class="fas fa-tools"></i></div>
+                        <div class="text-right">
+                            <div class="text-3xl font-extrabold text-slate-900">8</div>
+                            <div class="text-gray-900 font-medium">Ruang Praktik</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop rails digantikan oleh side rails absolut di atas -->
+        </div>
     </section>
 
-    <!-- Program Keahlian -->
-    <section id="jurusan" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Program Keahlian</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-                <p class="text-lg text-gray-600 mt-4">Pilih jurusan yang sesuai dengan passion dan cita-cita Anda</p>
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+
+    <!-- ===== KEUNGGULAN ===== -->
+    <section id="keunggulan" class="py-20 overflow-hidden relative bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Keunggulan & Prestasi</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
             </div>
-            
+    </section>
+    <!-- MARQUEE -->
+    <div class="relative w-full bg-transparent marquee-themed keunggulan-marquee">
+        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track speed-15">
+
+            <!-- Card 1 -->
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
+                    keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
+                    pengalaman kerja nyata kepada siswa.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
+                    langsung di dunia industri.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
+                    diraih siswa.</p>
+            </div>
+
+            <!-- Duplicate biar looping smooth: gandakan semua kartu -->
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
+                    keunggulan dalam berbagai bidang keahlian.</p>
+            </div>
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
+                    pengalaman kerja nyata kepada siswa.</p>
+            </div>
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
+                    langsung di dunia industri.</p>
+            </div>
+            <div
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
+                    diraih siswa.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="relative w-full bg-transparent keunggulan-marquee">
+        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track reverse speed-35">
+
+            <!-- Card 1 -->
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 3 Kompetisi Robotik</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kompetisi Robotik Tingkat Nasional<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+            </div>
+
+            <!-- Duplicate biar looping smooth: gandakan semua kartu -->
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+  
+            </div>
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
+            </div>
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+            </div>
+            <div
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+
+    <!-- ===== JURUSAN ===== -->
+    <section id="jurusan" class="section-light py-20">
+        <div class="section-bubbles" aria-hidden="true">
+            <span class="bubble" style="--size: 110px; --dur: 16s; --delay: 0.2s; top: 12%; left: 8%;"></span>
+            <span class="bubble" style="--size: 80px; --dur: 14s; --delay: 1s; bottom: 10%; left: 6%;"></span>
+            <span class="bubble" style="--size: 130px; --dur: 19s; --delay: 0.8s; top: 14%; right: 8%;"></span>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-bold mb-4">Program Keahlian</h2>
+                <p class="text-xl max-w-3xl mx-auto">Pilih program keahlian yang sesuai dengan minat dan bakat Anda
+                    untuk masa depan yang cerah.</p>
+            </div>
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
-                            <i class="fas fa-bolt text-2xl text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Teknik Instalasi Tenaga Listrik</h3>
-                        <p class="text-gray-600 mb-6">Belajar tentang instalasi, pemeliharaan, dan pengoperasian sistem tenaga listrik.</p>
-                        <div class="flex items-center text-blue-600 font-semibold">
-                            <span>Pelajari Lebih Lanjut</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </div>
+                <div class="jurusan-card animate-scale-in">
+                    <div class="jurusan-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="jurusan-content">
+                        <h3 class="text-xl font-bold mb-2">Teknik Instalasi Tenaga Listrik (TITL)</h3>
+                        <p>Belajar tentang instalasi, pemeliharaan, dan pengoperasian sistem tenaga listrik.</p>
                     </div>
                 </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                            <i class="fas fa-robot text-2xl text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Teknik Otomasi Industri</h3>
-                        <p class="text-gray-600 mb-6">Menguasai teknologi otomasi dan kontrol industri yang modern.</p>
-                        <div class="flex items-center text-purple-600 font-semibold">
-                            <span>Pelajari Lebih Lanjut</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </div>
+
+                <div class="jurusan-card animate-scale-in" style="animation-delay: 0.1s;">
+                    <div class="jurusan-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="jurusan-content">
+                        <h3 class="text-xl font-bold mb-2">Teknik Otomasi Industri (TOI)</h3>
+                        <p>Menguasai teknologi otomasi dan kontrol industri yang modern.</p>
                     </div>
                 </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
-                            <i class="fas fa-video text-2xl text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Teknik Audio Video</h3>
-                        <p class="text-gray-600 mb-6">Kreatif dalam produksi audio dan video dengan teknologi terkini.</p>
-                        <div class="flex items-center text-blue-600 font-semibold">
-                            <span>Pelajari Lebih Lanjut</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </div>
+
+                <div class="jurusan-card animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="jurusan-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="jurusan-content">
+                        <h3 class="text-xl font-bold mb-2">Teknik Audio Video (TAV)</h3>
+                        <p>Kreatif dalam produksi audio dan video dengan teknologi terkini.</p>
                     </div>
                 </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                            <i class="fas fa-network-wired text-2xl text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Teknik Komputer dan Jaringan</h3>
-                        <p class="text-gray-600 mb-6">Ahli dalam jaringan komputer dan administrasi sistem.</p>
-                        <div class="flex items-center text-purple-600 font-semibold">
-                            <span>Pelajari Lebih Lanjut</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </div>
+
+                <div class="jurusan-card animate-scale-in" style="animation-delay: 0.3s;">
+                    <div class="jurusan-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="jurusan-content">
+                        <h3 class="text-xl font-bold mb-2">Teknik Komputer dan Jaringan (TKJ)</h3>
+                        <p>Ahli dalam jaringan komputer dan administrasi sistem.</p>
                     </div>
                 </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
-                            <i class="fas fa-code text-2xl text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Rekayasa Perangkat Lunak</h3>
-                        <p class="text-gray-600 mb-6">Mengembangkan aplikasi dan software yang inovatif.</p>
-                        <div class="flex items-center text-blue-600 font-semibold">
-                            <span>Pelajari Lebih Lanjut</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </div>
+
+                <div class="jurusan-card animate-scale-in" style="animation-delay: 0.4s;">
+                    <div class="jurusan-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="jurusan-content">
+                        <h3 class="text-xl font-bold mb-2">Rekayasa Perangkat Lunak (RPL)</h3>
+                        <p>Mengembangkan aplikasi dan software yang inovatif.</p>
                     </div>
                 </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                            <i class="fas fa-palette text-2xl text-purple-600"></i>
+
+                <div class="jurusan-card animate-scale-in" style="animation-delay: 0.5s;">
+                    <div class="jurusan-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="jurusan-content">
+                        <h3 class="text-xl font-bold mb-2">Desain Komunikasi Visual / Multimedia (DKV/MM)</h3>
+                        <p>Kreatif dalam desain grafis dan multimedia yang menarik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+    <section id="fasilitas" class="relative py-24 bg-fixed bg-cover bg-center"
+        style="background-image: url('assets/img/smkn4bdg.png');">
+        <!-- Parallax overlay untuk kontras konten -->
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]"></div>
+    </section>
+
+    <!-- ===== FASILITAS ===== -->
+    <section id="fasilitas" class="relative py-20">
+        <div class="section-bubbles" aria-hidden="true">
+            <span class="bubble" style="--size: 140px; --dur: 20s; --delay: 0s; top: 6%; left: 5%;"></span>
+            <span class="bubble" style="--size: 80px; --dur: 12s; --delay: 0.9s; bottom: 8%; right: 6%;"></span>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Fasilitas Unggulan</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid cards ala Tailwind component -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 text-gray-600">
+                <div
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2">
+                    <div class="facility-card h-full">
+                        <div class="photo-stack">
+                            <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Desain Komunikasi Visual</h3>
-                        <p class="text-gray-600 mb-6">Kreatif dalam desain grafis dan multimedia yang menarik.</p>
-                        <div class="flex items-center text-purple-600 font-semibold">
-                            <span>Pelajari Lebih Lanjut</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="mb-2 text-xl font-semibold text-slate-900">8 Ruang Praktik</h5>
+                        <p class="text-sm text-gray-600">Ruang praktik lengkap untuk pembelajaran berbasis industri.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button"
+                            class="select-none rounded-lg bg-blue-500 py-2.5 px-5 text-center text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg">Read
+                            More</button>
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-3">
+                    <div class="facility-card h-full">
+                        <div class="photo-stack">
+                            <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="mb-2 text-xl font-semibold text-slate-900">24 Ruang Teori</h5>
+                        <p class="text-sm text-gray-600">Ruang belajar nyaman untuk teori dan diskusi.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button"
+                            class="select-none rounded-lg bg-blue-500 py-2.5 px-5 text-center text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg">Read
+                            More</button>
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-5">
+                    <div class="facility-card h-full">
+                        <div class="photo-stack">
+                            <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="mb-2 text-xl font-semibold text-slate-900">Perpustakaan</h5>
+                        <p class="text-sm text-gray-600">Ruang baca dengan koleksi buku dan referensi digital.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button"
+                            class="select-none rounded-lg bg-blue-500 py-2.5 px-5 text-center text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg">Read
+                            More</button>
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-4 row-start-3">
+                    <div class="facility-card h-full">
+                        <div class="photo-stack">
+                            <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="mb-2 text-xl font-semibold text-slate-900">Technopark</h5>
+                        <p class="text-sm text-gray-600">Area inovasi dan pengembangan karya siswa.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button"
+                            class="select-none rounded-lg bg-blue-500 py-2.5 px-5 text-center text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg">Read
+                            More</button>
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-2 row-start-3">
+                    <div class="facility-card h-full">
+                        <div class="photo-stack">
+                            <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="mb-2 text-xl font-semibold text-slate-900">Masjid</h5>
+                        <p class="text-sm text-gray-600">Fasilitas ibadah yang nyaman untuk warga sekolah.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button type="button"
+                            class="select-none rounded-lg bg-blue-500 py-2.5 px-5 text-center text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+
+    <!-- ===== VIRTUAL TOUR ===== -->
+    <section id="virtual-tour" class="section-light py-20">
+        <div class="section-bubbles" aria-hidden="true">
+            <span class="bubble" style="--size: 140px; --dur: 20s; --delay: 0s; top: 6%; left: 5%;"></span>
+            <span class="bubble" style="--size: 80px; --dur: 12s; --delay: 0.9s; bottom: 8%; right: 6%;"></span>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Virtual Tour SMKN 4 Bandung</h2>
+                <p class="text-xl max-w-3xl mx-auto">Jelajahi fasilitas dan lingkungan SMKN 4 Bandung secara virtual
+                    dari mana saja Anda berada.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+                        <div class="space-y-4 sm:space-y-6">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Jelajahi Sekolah Kami</h3>
+                            <div class="space-y-3 sm:space-y-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-building text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Gedung Utama</h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Lihat arsitektur modern dan ruang
+                                            belajar yang nyaman</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-tools text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Laboratorium
+                                            Praktik</h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Jelajahi 8 ruang praktik dengan
+                                            peralatan industri</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-rocket text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Technopark</h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Area inovasi dan pengembangan
+                                            teknologi</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-book text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Perpustakaan</h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Ruang baca yang nyaman dengan
+                                            koleksi lengkap</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center space-y-4 sm:space-y-6">
+                            <div
+                                class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6">
+                                <i
+                                    class="fas fa-vr-cardboard text-4xl sm:text-5xl lg:text-6xl text-blue-600 mb-3 sm:mb-4"></i>
+                                <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-2">Virtual Tour 360°</h4>
+                                <p class="text-gray-600 text-sm sm:text-base">Pengalaman immersive menjelajahi sekolah
+                                </p>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="w-full max-w-2xl">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!4v1755406378111!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRDR5NUhBVlE.!2m2!1d-6.941218527854798!2d107.6290015122643!3f120.98275871080878!4f11.732277169790422!5f0.7820865974627469"
+                                        class="w-full h-64 sm:h-80 lg:h-96 rounded-xl shadow-lg" style="border:0;"
+                                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
+                                <a href="#" class="liquid-glass-btn secondary large flex items-center gap-3">
+                                    <i class="fas fa-vr-cardboard"></i>
+                                    Kunjungi Virtual Tour
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -280,39 +951,76 @@
         </div>
     </section>
 
-    <!-- Sejarah Singkat -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Sejarah Singkat</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
+
+    <!-- ===== DAFTAR ===== -->
+    <section id="daftar" class="section-dark py-20">
+        <div class="section-bubbles" aria-hidden="true">
+            <span class="bubble" style="--size: 110px; --dur: 15s; --delay: 0.3s; top: 10%; left: 7%;"></span>
+            <span class="bubble" style="--size: 100px; --dur: 18s; --delay: 1.2s; bottom: 10%; right: 7%;"></span>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Daftar Sekarang</h2>
+                <p class="text-xl max-w-3xl mx-auto">Bergabunglah dengan SMKN 4 Bandung dan wujudkan impian Anda menjadi
+                    lulusan yang siap kerja, kreatif, dan mandiri.</p>
             </div>
-            
-            <div class="relative">
-                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200"></div>
-                
-                <div class="space-y-12">
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 bg-blue-600 rounded-full z-10 relative"></div>
-                        <div class="ml-8 bg-white p-6 rounded-lg shadow-lg w-1/2">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">1962</h3>
-                            <p class="text-gray-600">SMKN 4 Bandung didirikan sebagai lembaga pendidikan kejuruan.</p>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Informasi Pendaftaran</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-calendar-alt text-blue-600 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Jadwal Pendaftaran</h4>
+                                        <p class="text-gray-600">Januari - Maret 2025</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-users text-blue-600 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Kuota Siswa</h4>
+                                        <p class="text-gray-600">400 siswa baru per tahun</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-graduation-cap text-blue-600 mt-1 mr-3"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Program Keahlian</h4>
+                                        <p class="text-gray-600">6 program keahlian unggulan</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="flex items-center justify-end">
-                        <div class="w-8 h-8 bg-purple-600 rounded-full z-10 relative"></div>
-                        <div class="mr-8 bg-white p-6 rounded-lg shadow-lg w-1/2 text-right">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">1969</h3>
-                            <p class="text-gray-600">Sekolah pindah ke lokasi strategis di Jl. Kliningan No. 6, Bandung.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 bg-blue-600 rounded-full z-10 relative"></div>
-                        <div class="ml-8 bg-white p-6 rounded-lg shadow-lg w-1/2">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">1999/2000</h3>
-                            <p class="text-gray-600">Berganti nama menjadi SMKN 4 Bandung dan meraih akreditasi A.</p>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Hubungi Kami</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-blue-600 mr-3"></i>
+                                    <span class="text-gray-700">+62 22 720 1234</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                                    <span class="text-gray-700">ppdb@smkn4bandung.sch.id</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                                    <span class="text-gray-700">Jl. Kliningan No. 6, Bandung</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <a href="https://spmb.jabarprov.go.id/" class="liquid-glass-btn primary"
+                                    target="_blank">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Kunjungi Website PPDB
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -320,247 +1028,139 @@
         </div>
     </section>
 
-    <!-- Fasilitas -->
-    <section id="fasilitas" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Fasilitas Unggulan</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-t-xl flex items-center justify-center">
-                        <i class="fas fa-chalkboard-teacher text-6xl text-blue-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">24 Ruang Teori</h3>
-                        <p class="text-gray-600">Ruang belajar yang nyaman dan dilengkapi dengan teknologi modern.</p>
-                    </div>
-                </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-purple-100 to-blue-100 rounded-t-xl flex items-center justify-center">
-                        <i class="fas fa-tools text-6xl text-purple-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">8 Ruang Praktik</h3>
-                        <p class="text-gray-600">Laboratorium praktik yang dilengkapi dengan peralatan industri.</p>
-                    </div>
-                </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-t-xl flex items-center justify-center">
-                        <i class="fas fa-book text-6xl text-blue-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Perpustakaan</h3>
-                        <p class="text-gray-600">Koleksi buku dan referensi yang lengkap untuk mendukung pembelajaran.</p>
-                    </div>
-                </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-purple-100 to-blue-100 rounded-t-xl flex items-center justify-center">
-                        <i class="fas fa-laptop-code text-6xl text-purple-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Technopark</h3>
-                        <p class="text-gray-600">Area inovasi dan pengembangan teknologi untuk siswa.</p>
-                    </div>
-                </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-blue-100 to-purple-100 rounded-t-xl flex items-center justify-center">
-                        <i class="fas fa-mosque text-6xl text-blue-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Masjid</h3>
-                        <p class="text-gray-600">Tempat ibadah yang nyaman untuk kegiatan keagamaan.</p>
-                    </div>
-                </div>
-                
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-purple-100 to-blue-100 rounded-t-xl flex items-center justify-center">
-                        <i class="fas fa-utensils text-6xl text-purple-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Kantin</h3>
-                        <p class="text-gray-600">Area makan yang bersih dan menyediakan berbagai pilihan makanan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Wave Divider -->
+    <div class="wave-divider"></div>
 
-    <!-- Prestasi -->
-    <section class="py-20 bg-gray-50">
+    <!-- ===== FOOTER ===== -->
+    <footer id="kontak" class="footer py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Prestasi & Pencapaian</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-trophy text-xl text-yellow-600"></i>
+            <div class="footer-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <a href="#beranda" class="brand-liquid-container-link">
+                        <div class="brand-liquid-container bg-transparent">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                                <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Juara LKS Nasional</h3>
-                                <p class="text-gray-600">Berhasil meraih juara dalam Lomba Kompetensi Siswa Nasional bidang Software Application.</p>
+                                <h1 class="text-xl font-bold text-gray-900">SMKN 4 Bandung</h1>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-globe text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Partisipasi Internasional</h3>
-                                <p class="text-gray-600">Berpartisipasi dalam program internasional bersama UNSW Australia.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-industry text-xl text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Kelas Industri</h3>
-                                <p class="text-gray-600">Kerja sama dengan perusahaan ternama seperti Neuronworks, LearningX, dan lainnya.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-users text-xl text-green-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Program Unggulan</h3>
-                                <p class="text-gray-600">Berbagai program unggulan yang mempersiapkan siswa untuk dunia kerja.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </a>
 
-    <!-- Testimoni/Fakta Unik -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Fakta Unik</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 text-white p-12 rounded-2xl">
-                        <div class="text-6xl font-bold mb-4">1492</div>
-                        <div class="text-xl mb-6">Total Siswa Aktif</div>
-                        <p class="text-blue-100">Dengan jumlah siswa yang besar, SMKN 4 Bandung menjadi salah satu SMK terbesar di Jawa Barat.</p>
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold">Kontak</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+                                <span>Jl. Kliningan No. 6, Bandung</span>
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-phone mr-3 text-blue-400"></i>
+                                <span>+62 22 720 1234</span>
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                                <span>info@smkn4bdg.sch.id</span>
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-globe mr-3 text-blue-400"></i>
+                                <a href="https://smkn4bdg.sch.id" class="hover:text-blue-400 transition-colors"
+                                    target="_blank">smkn4bdg.sch.id</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-purple-500 to-blue-600 text-white p-12 rounded-2xl">
-                        <div class="text-6xl font-bold mb-4">99</div>
-                        <div class="text-xl mb-6">Guru & Staff</div>
-                        <p class="text-purple-100">Tim pengajar yang profesional dan berpengalaman dalam mendidik generasi muda.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16 text-center">
-                <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-12 rounded-2xl">
-                    <h3 class="text-3xl font-bold mb-6">Ekskul Angklung HARPA 4</h3>
-                    <p class="text-xl mb-6">Ekskul angklung tertua di Indonesia untuk tingkat SMK</p>
-                    <p class="text-blue-100">Menjaga warisan budaya Sunda sambil mengembangkan kreativitas siswa dalam seni musik tradisional.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer id="kontak" class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="space-y-4">
-                    <div class="flex items-center">
-                        <img src="assets/logo-smkn4.png" alt="Logo SMKN 4 Bandung" class="h-12 w-auto">
-                        <div class="ml-3">
-                            <h3 class="text-xl font-bold text-blue-400">SMKN 4</h3>
-                            <p class="text-sm text-gray-400">Bandung</p>
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-white">Link Cepat</h4>
+                        <div class="space-y-2">
+                            <a href="#beranda"
+                                class="block text-gray-400 hover:text-blue-400 transition-colors">Beranda</a>
+                            <a href="#tentang"
+                                class="block text-gray-400 hover:text-blue-400 transition-colors">Tentang</a>
+                            <a href="#keunggulan"
+                                class="block text-gray-400 hover:text-blue-400 transition-colors">Keunggulan</a>
+                            <a href="#jurusan"
+                                class="block text-gray-400 hover:text-blue-400 transition-colors">Jurusan</a>
+                            <a href="#fasilitas"
+                                class="block text-gray-400 hover:text-blue-400 transition-colors">Fasilitas</a>
+                            <a href="#prestasi"
+                                class="block text-gray-400 hover:text-blue-400 transition-colors">Prestasi</a>
                         </div>
                     </div>
-                    <p class="text-gray-400">Mencetak Lulusan Siap Kerja, Kreatif, dan Mandiri</p>
+
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold">Media Sosial</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://web.facebook.com/smkn4bandung?_rdc=1&_rdr#"
+                                class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-white transition-colors hover:text-gray-900">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@smknegeri4bandung"
+                                class="w-10 h-10 bg-black text-white hover:text-black rounded-full flex items-center justify-center hover:bg-white transition-colors hover:text-black">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://www.instagram.com/smknegeri4bandung/"
+                                class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-white transition-colors hover:text-gray-900">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@SMKN4BANDUNGOfficial"
+                                class="w-10 h-10 bg-red-600  rounded-full flex items-center justify-center hover:bg-white transition-colors hover:text-gray-900">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://x.com/smkn4bdg"
+                                class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-white transition-colors hover:text-gray-900">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="space-y-4">
-                    <h4 class="text-lg font-semibold">Kontak</h4>
-                    <div class="space-y-2">
-                        <div class="flex items-center text-gray-400">
-                            <i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>
-                            <span>Jl. Kliningan No. 6, Bandung</span>
-                        </div>
-                        <div class="flex items-center text-gray-400">
-                            <i class="fas fa-phone mr-3 text-blue-400"></i>
-                            <span>+62 22 720 1234</span>
-                        </div>
-                        <div class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-3 text-blue-400"></i>
-                            <span>info@smkn4bandung.sch.id</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-4">
-                    <h4 class="text-lg font-semibold">Link Cepat</h4>
-                    <div class="space-y-2">
-                        <a href="#beranda" class="block text-gray-400 hover:text-blue-400 transition-colors">Beranda</a>
-                        <a href="#tentang" class="block text-gray-400 hover:text-blue-400 transition-colors">Tentang</a>
-                        <a href="#jurusan" class="block text-gray-400 hover:text-blue-400 transition-colors">Jurusan</a>
-                        <a href="#fasilitas" class="block text-gray-400 hover:text-blue-400 transition-colors">Fasilitas</a>
-                    </div>
-                </div>
-                
-                <div class="space-y-4">
-                    <h4 class="text-lg font-semibold">Media Sosial</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
+
+                <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                    <p class="text-gray-400">&copy; 2025 SMKN 4 Bandung. All rights reserved.</p>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 SMKN 4 Bandung. All rights reserved.</p>
-            </div>
-        </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="/assets/JS/script.js"></script>
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <!-- AOS Animations JS (load before our app script) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/JS/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.AOS) {
+                // Responsive AOS configuration
+                const isMobile = window.innerWidth <= 768;
+                const isSmallMobile = window.innerWidth <= 480;
+                
+                AOS.init({
+                    duration: isSmallMobile ? 400 : isMobile ? 500 : 700,
+                    once: false,   // animasi mengulang saat masuk lagi
+                    mirror: true,  // fade-out saat keluar viewport
+                    offset: isMobile ? 60 : 80,
+                    easing: 'ease-out-cubic',
+                    delay: isMobile ? 0 : 0,
+                    // Disable animations on very small screens for better performance
+                    disable: isSmallMobile ? 'phone' : false
+                });
+                
+                // Refresh AOS on window resize for responsive behavior
+                window.addEventListener('resize', function() {
+                    const newIsMobile = window.innerWidth <= 768;
+                    const newIsSmallMobile = window.innerWidth <= 480;
+                    
+                    if (newIsSmallMobile !== isSmallMobile || newIsMobile !== isMobile) {
+                        AOS.refresh();
+                    }
+                });
+                
+                window.addEventListener('load', function () { 
+                    AOS.refreshHard(); 
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

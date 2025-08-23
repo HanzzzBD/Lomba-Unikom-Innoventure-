@@ -1,0 +1,447 @@
+/* Liquid Glass Button Styles - Dark/Light Mode Adaptive */
+.liquid-glass-btn {
+    position: relative;
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Light Mode Styles */
+[data-theme="light"] .liquid-glass-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .liquid-glass-btn::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.3),
+        transparent
+    );
+}
+
+[data-theme="light"] .liquid-glass-btn::after {
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(0, 0, 0, 0.2),
+        transparent,
+        rgba(0, 0, 0, 0.2),
+        transparent
+    );
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .liquid-glass-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+[data-theme="dark"] .liquid-glass-btn::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+}
+
+[data-theme="dark"] .liquid-glass-btn::after {
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+}
+
+/* Pseudo-elements for moving border effect */
+.liquid-glass-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.5s;
+    animation: borderFlow 3s linear infinite;
+}
+
+.liquid-glass-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    animation: rotate 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Animations */
+@keyframes borderFlow {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover Effects - Light Mode */
+[data-theme="light"] .liquid-glass-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .liquid-glass-btn:hover::after {
+    opacity: 1;
+}
+
+[data-theme="light"] .liquid-glass-btn:hover::before {
+    animation-duration: 1.5s;
+}
+
+/* Hover Effects - Dark Mode */
+[data-theme="dark"] .liquid-glass-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 12px 40px rgba(31, 38, 135, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .liquid-glass-btn:hover::after {
+    opacity: 1;
+}
+
+[data-theme="dark"] .liquid-glass-btn:hover::before {
+    animation-duration: 1.5s;
+}
+
+/* Active state - Light Mode */
+[data-theme="light"] .liquid-glass-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state - Dark Mode */
+[data-theme="dark"] .liquid-glass-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 20px rgba(31, 38, 135, 0.4);
+}
+
+/* Focus state for accessibility - Light Mode */
+[data-theme="light"] .liquid-glass-btn:focus {
+    outline: none;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.1),
+        0 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus state for accessibility - Dark Mode */
+[data-theme="dark"] .liquid-glass-btn:focus {
+    outline: none;
+    box-shadow: 
+        0 12px 40px rgba(31, 38, 135, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.1),
+        0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Button variants - Light Mode (using theme colors only) */
+[data-theme="light"] .liquid-glass-btn.primary {
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .liquid-glass-btn.primary:hover {
+    background: rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .liquid-glass-btn.secondary {
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .liquid-glass-btn.secondary:hover {
+    background: rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .liquid-glass-btn.success {
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .liquid-glass-btn.success:hover {
+    background: rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .liquid-glass-btn.danger {
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .liquid-glass-btn.danger:hover {
+    background: rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Button variants - Dark Mode (using theme colors only) */
+[data-theme="dark"] .liquid-glass-btn.primary {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .liquid-glass-btn.primary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(31, 38, 135, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .liquid-glass-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .liquid-glass-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(31, 38, 135, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .liquid-glass-btn.success {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .liquid-glass-btn.success:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(31, 38, 135, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .liquid-glass-btn.danger {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .liquid-glass-btn.danger:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(31, 38, 135, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+/* Button sizes */
+.liquid-glass-btn.small {
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 40px;
+}
+
+.liquid-glass-btn.large {
+    padding: 20px 40px;
+    font-size: 18px;
+    border-radius: 60px;
+}
+
+/* Disabled state */
+.liquid-glass-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    animation: none;
+}
+
+.liquid-glass-btn:disabled::before,
+.liquid-glass-btn:disabled::after {
+    animation: none;
+}
+
+/* Light mode disabled state */
+[data-theme="light"] .liquid-glass-btn:disabled {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-muted);
+}
+
+/* Dark mode disabled state */
+[data-theme="dark"] .liquid-glass-btn:disabled {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+}
+
+/* Auto-detect theme if no class is applied */
+@media (prefers-color-scheme: light) {
+    body:not([data-theme="dark"]) .liquid-glass-btn {
+        background: transparent;
+        color: var(--text-primary);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+    
+    body:not([data-theme="dark"]) .liquid-glass-btn::before {
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 0, 0, 0.3),
+            transparent
+        );
+    }
+    
+    body:not([data-theme="dark"]) .liquid-glass-btn::after {
+        background: conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(0, 0, 0, 0.2),
+            transparent,
+            rgba(0, 0, 0, 0.2),
+            transparent
+        );
+    }
+    
+    body:not([data-theme="dark"]) .liquid-glass-btn:hover {
+        transform: translateY(-2px);
+        background: rgba(0, 0, 0, 0.15);
+        border-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 
+            0 12px 40px rgba(0, 0, 0, 0.25),
+            0 0 20px rgba(0, 0, 0, 0.2),
+            0 0 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    body:not([data-theme="dark"]) .liquid-glass-btn:hover::after {
+        opacity: 1;
+    }
+    
+    body:not([data-theme="dark"]) .liquid-glass-btn:hover::before {
+        animation-duration: 1.5s;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) .liquid-glass-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    }
+    
+    body:not([data-theme="light"]) .liquid-glass-btn::before {
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+        );
+    }
+    
+    body:not([data-theme="light"]) .liquid-glass-btn::after {
+        background: conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+    }
+    
+    body:not([data-theme="light"]) .liquid-glass-btn:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 
+            0 12px 40px rgba(31, 38, 135, 0.3),
+            0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 40px rgba(255, 255, 255, 0.05);
+    }
+    
+    body:not([data-theme="light"]) .liquid-glass-btn:hover::after {
+        opacity: 1;
+    }
+    
+    body:not([data-theme="light"]) .liquid-glass-btn:hover::before {
+        animation-duration: 1.5s;
+    }
+}
