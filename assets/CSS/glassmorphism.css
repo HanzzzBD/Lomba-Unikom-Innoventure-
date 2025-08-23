@@ -281,45 +281,6 @@ p {
     animation: glow 2s ease-in-out infinite;
 }
 
-/* ===== NAVIGATION ===== */
-.navbar-glass {
-    background: var(--glass-bg);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    border-bottom: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-}
-
-.nav-link {
-    position: relative;
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 12px;
-    transition: var(--transition-smooth);
-}
-
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--title-gradient);
-    transition: var(--transition-smooth);
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::before {
-    width: 80%;
-}
-
-.nav-link:hover {
-    background: var(--glass-bg);
-    transform: translateY(-2px);
-}
-
 /* ===== HERO SECTION ===== */
 .hero-section {
     min-height: 100vh;
@@ -510,15 +471,6 @@ p {
 }
 
 /* ===== FACILITIES ===== */
-.facility-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: var(--transition-smooth);
-}
 
 .facility-image {
     width: 100%;

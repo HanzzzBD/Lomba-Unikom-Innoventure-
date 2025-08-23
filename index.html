@@ -14,7 +14,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
+    
+    <!-- Icon SMKN 4 Bandung -->
+    <link rel="icon" href="assets/img/logo_smkn4bdg.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -37,11 +39,11 @@
 <body class="font-['Inter'] text-gray-800">
     <!-- ===== NAVIGATION ===== -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="navbar-liquid-container">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
+            <div class="navbar-liquid-container ">
                 <!-- Brand Section -->
-                <a href="#beranda" class="brand-liquid-container-link">
-                    <div class="brand-liquid-container">
+                <a href="#beranda" class="brand-liquid-container-link ">
+                    <div class="brand-liquid-container ">
                         <div class="w-10 h-10 rounded-lg flex items-center justify-center">
                             <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
                         </div>
@@ -53,7 +55,7 @@
                 </a>
 
                 <!-- Navigation Links -->
-                <div class="hidden md:flex items-center nav-links-liquid-container" transparant>
+                <div class="hidden md:flex text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative" >
                     <a href="#beranda"
                         class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
                         data-section="beranda">
@@ -122,7 +124,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-md border-t border-white/50">
+        <div id="mobile-menu" class="hidden md:hidden backdrop-blur-md border-t border-white/50">
             <div class="px-4 py-3 space-y-2">
                 <a href="#beranda"
                     class="block px-3 py-2 text-gray-900 hover:text-blue-300 rounded-lg transition-colors">Beranda</a>
@@ -188,11 +190,11 @@
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in"
                     style="animation-delay: 0.4s;">
-                    <a href="#daftar" class="glass-button animate-glow">
+                    <a href="#daftar" class="glass-button animate-glow text-gray-900">
                         <i class="fas fa-user-plus"></i>
                         Daftar Sekarang
                     </a>
-                    <a href="#virtual-tour" class="glass-button animate-glow" style="animation-delay: 0.2s;">
+                    <a href="#virtual-tour" class="glass-button animate-glow text-gray-900" style="animation-delay: 0.2s;">
                         <i class="fas fa-vr-cardboard"></i>
                         Kunjungi Virtual Tour
                     </a>
@@ -439,7 +441,7 @@
     <section id="keunggulan" class="py-20 overflow-hidden relative bg-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Keunggulan Kami</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Keunggulan & Prestasi</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
             </div>
     </section>
@@ -449,7 +451,7 @@
 
             <!-- Card 1 -->
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
@@ -461,7 +463,7 @@
 
             <!-- Card 2 -->
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
@@ -473,7 +475,7 @@
 
             <!-- Card 3 -->
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
@@ -485,7 +487,7 @@
 
             <!-- Card 4 -->
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
@@ -497,7 +499,7 @@
 
             <!-- Duplicate biar looping smooth: gandakan semua kartu -->
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
@@ -507,7 +509,7 @@
                     keunggulan dalam berbagai bidang keahlian.</p>
             </div>
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
@@ -517,7 +519,7 @@
                     pengalaman kerja nyata kepada siswa.</p>
             </div>
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
@@ -527,7 +529,7 @@
                     langsung di dunia industri.</p>
             </div>
             <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
@@ -540,194 +542,92 @@
     </div>
     </div>
     <div class="relative w-full bg-transparent keunggulan-marquee">
-        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track reverse speed-21">
+        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track reverse speed-35">
 
             <!-- Card 1 -->
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
-                    keunggulan dalam berbagai bidang keahlian.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
             </div>
 
             <!-- Card 2 -->
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                    <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
-                    pengalaman kerja nyata kepada siswa.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
             </div>
 
             <!-- Card 3 -->
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
-                    langsung di dunia industri.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
             </div>
 
             <!-- Card 4 -->
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
-                    diraih siswa.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 3 Kompetisi Robotik</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kompetisi Robotik Tingkat Nasional<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
             </div>
 
             <!-- Duplicate biar looping smooth: gandakan semua kartu -->
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
-                    keunggulan dalam berbagai bidang keahlian.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+  
             </div>
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                    <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
-                    pengalaman kerja nyata kepada siswa.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
             </div>
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
-                    langsung di dunia industri.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
             </div>
             <div
-                class="min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div
                     class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
-                    diraih siswa.</p>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
             </div>
         </div>
     </div>
-    </div>
-
-    <!-- Third MARQUEE: normal with theme-aware styling -->
-    <div class="relative w-full bg-transparent marquee-themed keunggulan-marquee">
-        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track speed-15">
-            <!-- Card 1 -->
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-blue-100">
-                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">SMK Pusat Keunggulan</h3>
-                <p class="text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam
-                    berbagai bidang keahlian.</p>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-purple-100">
-                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">Teaching Factory</h3>
-                <p class="text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja
-                    nyata kepada siswa.</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-green-100">
-                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">Praktek Kerja Industri</h3>
-                <p class="text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia
-                    industri.</p>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-yellow-100">
-                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">Kelas Industri & Prestasi</h3>
-                <p class="text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.
-                </p>
-            </div>
-
-            <!-- Duplicate for smooth loop -->
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-blue-100">
-                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">SMK Pusat Keunggulan</h3>
-                <p class="text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan keunggulan dalam
-                    berbagai bidang keahlian.</p>
-            </div>
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-purple-100">
-                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">Teaching Factory</h3>
-                <p class="text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan pengalaman kerja
-                    nyata kepada siswa.</p>
-            </div>
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-green-100">
-                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">Praktek Kerja Industri</h3>
-                <p class="text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja langsung di dunia
-                    industri.</p>
-            </div>
-            <div
-                class="themed-card min-w-[75%] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-6 sm:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-yellow-100">
-                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3">Kelas Industri & Prestasi</h3>
-                <p class="text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah diraih siswa.
-                </p>
-            </div>
-        </div>
     </div>
 
     <!-- Wave Divider -->
@@ -833,9 +733,9 @@
             </div>
 
             <!-- Grid cards ala Tailwind component -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 text-gray-600">
                 <div
-                    class="relative flex w-full flex-col rounded-xl bg-white/90 text-gray-700 shadow-md col-span-2 row-span-2">
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2">
                     <div class="facility-card h-full">
                         <div class="photo-stack">
                             <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
@@ -862,7 +762,7 @@
                 </div>
 
                 <div
-                    class="relative flex w-full flex-col rounded-xl bg-white/90 text-gray-700 shadow-md col-span-2 row-span-2 col-start-3">
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-3">
                     <div class="facility-card h-full">
                         <div class="photo-stack">
                             <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
@@ -889,7 +789,7 @@
                 </div>
 
                 <div
-                    class="relative flex w-full flex-col rounded-xl bg-white/90 text-gray-700 shadow-md col-span-2 row-span-2 col-start-5">
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-5">
                     <div class="facility-card h-full">
                         <div class="photo-stack">
                             <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
@@ -916,7 +816,7 @@
                 </div>
 
                 <div
-                    class="relative flex w-full flex-col rounded-xl bg-white/90 text-gray-700 shadow-md col-span-2 row-span-2 col-start-4 row-start-3">
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-4 row-start-3">
                     <div class="facility-card h-full">
                         <div class="photo-stack">
                             <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
@@ -943,7 +843,7 @@
                 </div>
 
                 <div
-                    class="relative flex w-full flex-col rounded-xl bg-white/90 text-gray-700 shadow-md col-span-2 row-span-2 col-start-2 row-start-3">
+                    class="relative flex w-full flex-col rounded-xl border-white/50 bg-white/60 text-gray-700 shadow-md col-span-2 row-span-2 col-start-2 row-start-3">
                     <div class="facility-card h-full">
                         <div class="photo-stack">
                             <div class="card c1"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
@@ -1146,7 +1046,7 @@
             <div class="footer-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <a href="#beranda" class="brand-liquid-container-link">
-                        <div class="brand-liquid-container">
+                        <div class="brand-liquid-container bg-transparent">
                             <div class="w-10 h-10 rounded-lg flex items-center justify-center">
                                 <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
                             </div>
@@ -1239,14 +1139,34 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (window.AOS) {
+                // Responsive AOS configuration
+                const isMobile = window.innerWidth <= 768;
+                const isSmallMobile = window.innerWidth <= 480;
+                
                 AOS.init({
-                    duration: 700,
+                    duration: isSmallMobile ? 400 : isMobile ? 500 : 700,
                     once: false,   // animasi mengulang saat masuk lagi
                     mirror: true,  // fade-out saat keluar viewport
-                    offset: 80,
-                    easing: 'ease-out-cubic'
+                    offset: isMobile ? 60 : 80,
+                    easing: 'ease-out-cubic',
+                    delay: isMobile ? 0 : 0,
+                    // Disable animations on very small screens for better performance
+                    disable: isSmallMobile ? 'phone' : false
                 });
-                window.addEventListener('load', function () { AOS.refreshHard(); });
+                
+                // Refresh AOS on window resize for responsive behavior
+                window.addEventListener('resize', function() {
+                    const newIsMobile = window.innerWidth <= 768;
+                    const newIsSmallMobile = window.innerWidth <= 480;
+                    
+                    if (newIsSmallMobile !== isSmallMobile || newIsMobile !== isMobile) {
+                        AOS.refresh();
+                    }
+                });
+                
+                window.addEventListener('load', function () { 
+                    AOS.refreshHard(); 
+                });
             }
         });
     </script>
