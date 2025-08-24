@@ -1,4 +1,89 @@
-/* ===== SMKN 4 BANDUNG LANDING PAGE JAVASCRIPT ===== */
+       
+
+// ===== SMKN 4 BANDUNG LANDING PAGE SCRIPT =====
+
+const circle = document.querySelector('.cursor-circle');
+const invertSpot = document.querySelector('.invert-spot');
+const radius = 60;
+
+// Smooth cursor movement variables
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+let isMoving = false;
+
+// Buat filter invert dengan clip-path lingkaran di posisi mouse
+function updateInvertCircle(x, y) {
+  // Langsung update tanpa requestAnimationFrame untuk menghilangkan delay
+  invertSpot.style.clipPath = `circle(${radius}px at ${x}px ${y}px)`;
+  invertSpot.style.webkitClipPath = `circle(${radius}px at ${x}px ${y}px)`;
+  invertSpot.style.filter = 'invert(1)';
+  invertSpot.style.background = 'transparent';
+}
+
+// Smooth cursor movement using lerp (linear interpolation)
+function lerp(start, end, factor) {
+  return start + (end - start) * factor;
+}
+
+// Update cursor position smoothly
+function updateCursor() {
+  if (isMoving) {
+    // Smooth interpolation for cursor movement
+    currentX = lerp(currentX, mouseX, 0.15);
+    currentY = lerp(currentY, mouseY, 0.15);
+    
+    // Use transform3d for hardware acceleration
+    circle.style.transform = `translate3d(${currentX - 6}px, ${currentY - 6}px, 0)`;
+    
+    // Update inversion area
+    updateInvertCircle(currentX, currentY);
+    
+    // Continue animation
+    requestAnimationFrame(updateCursor);
+  }
+}
+
+// Mouse move handler - optimized
+function handleMouseMove(e) {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  
+  // Update invert effect immediately to follow mouse position
+  updateInvertCircle(e.clientX, e.clientY);
+  
+  if (!isMoving) {
+    isMoving = true;
+    updateCursor();
+  }
+}
+
+// Throttled mouse move for better performance
+let ticking = false;
+document.addEventListener('mousemove', (e) => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      handleMouseMove(e);
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+// Inisialisasi posisi awal
+document.addEventListener('DOMContentLoaded', () => {
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  
+  mouseX = centerX;
+  mouseY = centerY;
+  currentX = centerX;
+  currentY = centerY;
+  
+  updateInvertCircle(centerX, centerY);
+  circle.style.transform = `translate3d(${centerX - 6}px, ${centerY - 6}px, 0)`;
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE MENU TOGGLE =====
