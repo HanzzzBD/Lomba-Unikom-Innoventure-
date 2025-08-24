@@ -7,6 +7,7 @@
   overflow: hidden;
   border-radius: 14px;
   padding: 8px;
+
 }
 .keunggulan-marquee::before {
   content: "";
@@ -82,8 +83,6 @@
   }
 }
 
-
-
 /* Track helpers compatible with existing markup */
 .keunggulan-track {
   display: flex;
@@ -93,10 +92,15 @@
   animation-name: ku-marquee;
   animation-iteration-count: infinite;
   animation-timing-function: linear ;
+  animation-duration: 35s;
 }
-.keunggulan-track.reverse { animation-name: ku-marquee-reverse; }
-.keunggulan-track.speed-15 { animation-duration: 15s; }
-.keunggulan-track.speed-21 { animation-duration: 21s; }
+.keunggulan-track.reverse { 
+  animation-name: ku-marquee-reverse; 
+  animation-duration: 35s; /* Ensure reverse has duration */
+}
+.keunggulan-track.speed-15 { animation-duration: 35s; }
+.keunggulan-track.speed-21 { animation-duration: 35s; }
+.keunggulan-track.speed-35 { animation-duration: 35s; } /* Add missing speed-35 */
 .keunggulan-marquee:hover .keunggulan-track { animation-play-state: paused; }
 
 .basic-marquee svg {
