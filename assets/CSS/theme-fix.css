@@ -248,77 +248,75 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
     background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 250, 252, 0.1)) !important; 
     border-color: rgba(226, 232, 240, 0.3) !important;
 }
-.photo-stack .c6 {
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 250, 252, 0.1)) !important; 
-    border-color: rgba(226, 232, 240, 0.3) !important;
+
+/* Plus card styling */
+.photo-stack .plus-card {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: 2px dashed rgba(255, 255, 255, 0.5) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
-.photo-stack .c7 {
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 250, 252, 0.1)) !important; 
-    border-color: rgba(226, 232, 240, 0.3) !important;
+
+.photo-stack .plus-icon {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
-.photo-stack .c8 {
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 250, 252, 0.1)) !important; 
-    border-color: rgba(226, 232, 240, 0.3) !important;
+
+.photo-stack .plus-card:hover .plus-icon {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.photo-stack .c9 {
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 250, 252, 0.1)) !important; 
-    border-color: rgba(226, 232, 240, 0.3) !important;
-}
-.photo-stack .c10{
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 250, 252, 0.1)) !important; 
-    border-color: rgba(226, 232, 240, 0.3) !important;
+
+.photo-stack .plus-card:hover {
+    background: rgba(255, 255, 255, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .photo-stack .c1 { z-index: 1; }
 .photo-stack .c2 { z-index: 2; }
 .photo-stack .c3 { z-index: 3; }
 .photo-stack .c4 { z-index: 4; }
-.photo-stack .c5 { z-index: 5; }
-.photo-stack .c6 { z-index: 6; }
-.photo-stack .c7 { z-index: 7; }
-.photo-stack .c8 { z-index: 8; }
-.photo-stack .c9 { z-index: 9; }
-.photo-stack .c10 { z-index: 10; }
+.photo-stack .c5 { z-index: 0; }
 
 .photo-stack:hover .c1 { 
     transform: translateX(-90px) rotate(-26deg); 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    z-index: 800 !important;
 }
 .photo-stack:hover .c2 { 
     transform: translateX(-72px) rotate(-22deg); 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    z-index: 800 !important;
 }
 .photo-stack:hover .c3 { 
     transform: translateX(-54px) rotate(-18deg); 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    z-index: 800 !important;
 }
 .photo-stack:hover .c4 { 
     transform: translateX(-36px) rotate(-14deg); 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    z-index: 800 !important;
 }
 .photo-stack:hover .c5 { 
     transform: translateX(-18px) rotate(-10deg); 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    z-index: 800 !important;
 }
-.photo-stack:hover .c6 { 
-    transform: translateX(0) rotate(-6deg); 
+
+/* Kartu plus ikut miring saat hover dengan posisi yang berbeda, maju ke depan agar terlihat jelas */
+.photo-stack:hover .plus-card { 
+    transform: translateX(-108px) rotate(-30deg); 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-}
-.photo-stack:hover .c7 { 
-    transform: translateX(18px) rotate(-2deg); 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-}
-.photo-stack:hover .c8 { 
-    transform: translateX(36px) rotate(2deg); 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-}
-.photo-stack:hover .c9 { 
-    transform: translateX(54px) rotate(6deg); 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-}
-.photo-stack:hover .c10 { 
-    transform: translateX(72px) rotate(10deg); 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    z-index: 600 !important;
+    pointer-events: auto !important;
 }
 
 /* Enable the same spread state via a class (for mobile tap) */
@@ -327,22 +325,34 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
 .photo-stack.is-active .c3 { transform: translateX(-54px) rotate(-18deg); }
 .photo-stack.is-active .c4 { transform: translateX(-36px) rotate(-14deg); }
 .photo-stack.is-active .c5 { transform: translateX(-18px) rotate(-10deg); }
-.photo-stack.is-active .c6 { transform: translateX(0) rotate(-6deg); }
-.photo-stack.is-active .c7 { transform: translateX(18px) rotate(-2deg); }
-.photo-stack.is-active .c8 { transform: translateX(36px) rotate(2deg); }
-.photo-stack.is-active .c9 { transform: translateX(54px) rotate(6deg); }
-.photo-stack.is-active .c10 { transform: translateX(72px) rotate(10deg); }
 
-.photo-stack .c1:hover { transform: translateX(-120px) rotate(0deg) !important; }
-.photo-stack .c2:hover { transform: translateX(-100px) rotate(0deg) !important; }
-.photo-stack .c3:hover { transform: translateX(-80px) rotate(0deg) !important; }
-.photo-stack .c4:hover { transform: translateX(-60px) rotate(0deg) !important; }
-.photo-stack .c5:hover { transform: translateX(-40px) rotate(0deg) !important; }
-.photo-stack .c6:hover { transform: translateX(-20px) rotate(0deg) !important; }
-.photo-stack .c7:hover { transform: translateX(0) rotate(0deg) !important; }
-.photo-stack .c8:hover { transform: translateX(20px) rotate(0deg) !important; }
-.photo-stack .c9:hover { transform: translateX(40px) rotate(0deg) !important; }
-.photo-stack .c10:hover { transform: translateX(60px) rotate(0deg) !important; }
+.photo-stack .c1:hover { 
+    transform: translateX(-120px) rotate(0deg) !important; 
+    z-index: 1000 !important;
+}
+.photo-stack .c2:hover { 
+    transform: translateX(-100px) rotate(0deg) !important; 
+    z-index: 1000 !important;
+}
+.photo-stack .c3:hover { 
+    transform: translateX(-80px) rotate(0deg) !important; 
+    z-index: 1000 !important;
+}
+.photo-stack .c4:hover { 
+    transform: translateX(-60px) rotate(0deg) !important; 
+    z-index: 1000 !important;
+}
+.photo-stack .c5:hover { 
+    transform: translateX(-40px) rotate(0deg) !important; 
+    z-index: 1000 !important;
+}
+
+/* Plus card hover maju ke depan agar terlihat jelas dengan posisi yang berbeda */
+.photo-stack .plus-card:hover { 
+    transform: translateX(-140px) rotate(0deg) !important;
+    z-index: 800 !important;
+    pointer-events: auto !important;
+}
 
 /* Helper to center the stack within its container if needed */
 .facility-image { display: grid; place-items: center; }
@@ -350,10 +360,25 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
 /* Pastikan animasi tidak terpotong oleh container grid/card */
 #fasilitas .facility-card { position: relative; z-index: 1; overflow: visible; }
 #fasilitas .facility-image { overflow: visible; height: 300px; }
-#fasilitas .facility-card:hover { z-index: 30; }
+#fasilitas .facility-card:hover { z-index: 100; }
 
 /* Hilangkan efek scale default agar tidak bentrok dengan animasi stack */
 #fasilitas .facility-card:hover .facility-image { transform: none !important; }
+
+/* Pastikan photo-stack yang di-hover muncul di atas semua container */
+#fasilitas .facility-card:hover .photo-stack { z-index: 500; }
+
+/* Tambahkan z-index tinggi untuk kartu individual saat hover */
+#fasilitas .facility-card:hover .photo-stack .card { z-index: 600; }
+#fasilitas .facility-card:hover .photo-stack .plus-card { z-index: 600; }
+
+/* Pastikan semua kartu yang bergerak muncul di atas semua container */
+#fasilitas .facility-card:hover .photo-stack .c1 { z-index: 700; }
+#fasilitas .facility-card:hover .photo-stack .c2 { z-index: 700; }
+#fasilitas .facility-card:hover .photo-stack .c3 { z-index: 700; }
+#fasilitas .facility-card:hover .photo-stack .c4 { z-index: 700; }
+#fasilitas .facility-card:hover .photo-stack .c5 { z-index: 700; }
+#fasilitas .facility-card:hover .photo-stack .plus-card { z-index: 600; }
 
 /* ===== LIGHTBOX STYLES ===== */
 .photo-lightbox.hidden { display: none; }
@@ -410,6 +435,18 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
     background: rgba(255,255,255,.25);
 }
 
+.achievement-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fbbf24;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
 /* ===== GALLERY STYLES (Read More) ===== */
 .photo-gallery.hidden { display: none; }
 .photo-gallery { position: fixed; inset: 0; z-index: 9998; }
@@ -430,3 +467,97 @@ body[data-theme="dark"] footer a:hover .fab.fa-tiktok { color: #000000 !importan
 .photo-gallery__item img { width: 100%; height: 140px; object-fit: cover; display: block; }
 
 /* ===== keunggulan marque==== */
+
+    /* Background particles */
+    .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .particles::before,
+      .particles::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .particles::before {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      
+      .particles::after {
+        top: 60%;
+        right: 20%;
+        animation-delay: 3s;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+        50% { transform: translateY(-20px) scale(1.5); opacity: 0.8; }
+      }
+      
+      /* ===== CURSOR STYLING ===== */
+      * {
+          cursor: none !important;
+      }
+
+      /* Kursor bulat custom - optimized for smooth movement */
+      .cursor-circle {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        pointer-events: none;
+        border-radius: 50%;
+        z-index: 1000;
+        border: 2px solid #fff;
+        background: #fff;
+        box-sizing: border-box;
+        mix-blend-mode: difference;
+        transition: none; /* Crucial for no delay */
+        cursor: none;
+        transform: translate3d(0, 0, 0);
+        will-change: transform;
+        backface-visibility: hidden;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        transform-origin: center center;
+      }
+
+      .cursor-circle.hover {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.4);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Hide cursor on interactive elements */
+      a, button, input, textarea, select, [role="button"] {
+          cursor: none !important;
+      }
+      
+      /* Area invert pakai clip-path lingkaran */
+      .invert-spot {
+        position: fixed;
+        left: 0; 
+        top: 0;
+        width: 100vw; 
+        height: 100vh;
+        pointer-events: none;
+        z-index: 999;
+        will-change: clip-path;
+        transform: translate3d(0, 0, 0);
+      }
+    
+    

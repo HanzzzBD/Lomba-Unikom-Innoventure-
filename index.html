@@ -37,6 +37,16 @@
 </head>
 
 <body class="font-['Inter'] text-gray-800">
+    
+    <!-- Background particles for visual appeal -->
+    <div class="particles"></div>
+
+    <!-- Layer inversi -->
+    <div class="invert-spot"></div>
+
+    <!-- Kursor bulat -->
+    <div class="cursor-circle"></div>
+
     <!-- ===== NAVIGATION ===== -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
@@ -76,7 +86,7 @@
                         data-section="jurusan">
                         Jurusan
                     </a>
-                    <a href="#fasilitas"
+                    <a href="#facility"
                         class="liquid-nav-link text-gray-900 hover:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative"
                         data-section="fasilitas">
                         Fasilitas
@@ -190,7 +200,7 @@
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in"
                     style="animation-delay: 0.4s;">
-                    <a href="#daftar" class="glass-button animate-glow text-gray-900">
+                    <a href="#daftar" class="glass-button animate-glow text-slate-900">
                         <i class="fas fa-user-plus"></i>
                         Daftar Sekarang
                     </a>
@@ -214,13 +224,13 @@
     <div class="wave-divider"></div>
 
     <!-- ===== TENTANG ===== -->
-    <section id="tentang" class="relative py-24 bg-fixed bg-cover"
+    <section id="tentang" class="relative py-24 bg-fixed bg-cover "
         style="background-image: url('assets/img/bg-smkn4bdg.png');">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-white/80 md:bg-white/70 backdrop-blur-sm"></div>
 
         <!-- Side rails statistik (desktop) -->
-        <div class="hidden xl:flex absolute inset-y-0 left-3 xl:-left-4 z-10 flex-col justify-center gap-6 z-50">
+        <div class="hidden xl:flex absolute inset-y-0 -left-4 -xl:left-10 z-20 flex-col justify-center gap-6">
             <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
                 data-aos="fade-right" data-aos-delay="0">
                 <div class="flex items-center gap-4 flex-row-reverse">
@@ -244,7 +254,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden xl:flex absolute inset-y-0 right-4 xl:-right-4 z-10 flex-col justify-center gap-6 z-50">
+        <div class="hidden xl:flex absolute inset-y-0 -right-4 -xl:right-10 z-20 flex-col justify-center gap-6">
             <div class="w-64 rounded-2xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-lg p-6"
                 data-aos="fade-left" data-aos-delay="0">
                 <div class="flex items-center gap-4">
@@ -342,17 +352,17 @@
             </div>
 
             <!-- Bagian 1: Keunggulan (di bawah timeline) -->
-            <div class="grid grid-cols-1 grid-cols-8 grid-rows-3 gap-4 md:gap-8 mb-16">
-                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-2 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+            <div class="grid grid-cols-6 grid-rows-3 gap-6 mb-16 top-9">
+                <div class="group bg-white shadow-lg col-span-2 row-span-3 rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
                     <div
-                        class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
+                        class="w-14 h-14 md:w-16 md:h-16 col-span-2 row-span-3 rounded-full bg-blue-50 flex items-center justify-center mb-5">
                         <i class="fas fa-graduation-cap text-2xl md:text-3xl text-blue-600"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Akreditasi A</h3>
                     <p class="text-gray-900">Seluruh program keahlian terakreditasi A dari BAN-SM.</p>
                 </div>
-                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-4 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                <div class="group bg-white shadow-lg col-span-2 row-span-3 col-start-3 rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
@@ -361,7 +371,7 @@
                     <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2">Prestasi Tinggi</h3>
                     <p class="text-gray-900">Siswa meraih penghargaan tingkat daerah hingga nasional.</p>
                 </div>
-                <div class="group bg-white shadow-lg rounded-xl col-span-2 row-span-3 col-start-6 p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                <div class="group bg-white shadow-lg col-span-2 row-span-3 col-start-5 rounded-xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 flex items-center justify-center mb-5">
@@ -374,10 +384,10 @@
 
             <!-- Bagian 2: Statistik (Glass Effect) -->
             <!-- Mobile/Tablet: grid biasa -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:hidden ">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:hidden">
                 <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
                     data-aos="fade-up" data-aos-delay="0">
-                    <div class="flex items-center gap-4 mb-2">
+                    <div class="flex items-center gap-4 mb-4">
                         <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
                             <i class="fas fa-users"></i></div>
                         <div>
@@ -388,7 +398,7 @@
                 </div>
                 <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-4 mb-2">
+                    <div class="flex items-center gap-4 mb-4">
                         <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
                             <i class="fas fa-chalkboard-teacher"></i></div>
                         <div>
@@ -399,7 +409,7 @@
                 </div>
                 <div class="rounded-2xl border border-white/50 bg-white/40 backdrop-blur-xl p-6 md:p-8 shadow-lg"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-4 mb-2 flex-row-reverse">
+                    <div class="flex items-center gap-4 mb-4 flex-row-reverse">
                         <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
                             <i class="fas fa-building"></i></div>
                         <div class="text-right">
@@ -435,194 +445,200 @@
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">Keunggulan & Prestasi</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
             </div>
+        </div>
+        
+        <!-- MARQUEE -->
+        <div class="relative w-full bg-transparent marquee-themed keunggulan-marquee">
+            <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track speed-15">
+
+                <!-- Card 1 -->
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
+                        keunggulan dalam berbagai bidang keahlian.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
+                        pengalaman kerja nyata kepada siswa.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
+                        langsung di dunia industri.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
+                        diraih siswa.</p>
+                </div>
+
+                <!-- Duplicate biar looping smooth: gandakan semua kartu -->
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
+                        keunggulan dalam berbagai bidang keahlian.</p>
+                </div>
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
+                        pengalaman kerja nyata kepada siswa.</p>
+                </div>
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
+                        langsung di dunia industri.</p>
+                </div>
+                <div
+                    class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
+                        diraih siswa.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second Marquee (Reverse) -->
+        <div class="relative w-full bg-transparent keunggulan-marquee">
+            <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track reverse speed-35">
+
+                <!-- Card 1 -->
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 3 Kompetisi Robotik</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Kompetisi Robotik Tingkat Nasional<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+                </div>
+
+                <!-- Duplicate biar looping smooth: gandakan semua kartu -->
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
+                </div>
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
+                </div>
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+                </div>
+                <div
+                    class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
+                    <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- MARQUEE -->
-    <div class="relative w-full bg-transparent marquee-themed keunggulan-marquee">
-        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track speed-15">
-
-            <!-- Card 1 -->
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
-                    keunggulan dalam berbagai bidang keahlian.</p>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
-                    pengalaman kerja nyata kepada siswa.</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
-                    langsung di dunia industri.</p>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
-                    diraih siswa.</p>
-            </div>
-
-            <!-- Duplicate biar looping smooth: gandakan semua kartu -->
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">SMK Pusat Keunggulan</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Terpilih sebagai SMK PK yang menjadi pusat pengembangan
-                    keunggulan dalam berbagai bidang keahlian.</p>
-            </div>
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-industry text-xl sm:text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Teaching Factory</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Kerja sama langsung dengan industri untuk memberikan
-                    pengalaman kerja nyata kepada siswa.</p>
-            </div>
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Praktek Kerja Industri</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program PKL yang memberikan siswa pengalaman kerja
-                    langsung di dunia industri.</p>
-            </div>
-            <div
-                class="themed-card min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Kelas Industri & Prestasi</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Program kelas industri dan berbagai penghargaan yang telah
-                    diraih siswa.</p>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="relative w-full bg-transparent keunggulan-marquee">
-        <div class="flex w-max space-x-6 sm:space-x-8 keunggulan-track reverse speed-35">
-
-            <!-- Card 1 -->
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 3 Kompetisi Robotik</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Kompetisi Robotik Tingkat Nasional<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
-            </div>
-
-            <!-- Duplicate biar looping smooth: gandakan semua kartu -->
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-star text-xl sm:text-2xl text-blue-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Lomba Kompetensi Siswa (LKS) Tingkat Nasional</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Bidang Web Technologies - Tim SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
-  
-            </div>
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-video text-xl sm:text-2xl text-purple-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Provinsi</span></i></p>
-            </div>
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-briefcase text-xl sm:text-2xl text-green-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 2 Kompetisi Sains Nasional (KSN)</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Bidang Informatika - Siswa SMK Negeri 4 Bandung<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
-            </div>
-            <div
-                class="min-w-[280px] sm:min-w-[320px] md:min-w-[280px] lg:min-w-[300px] text-center p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-gray-100">
-                <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-trophy text-xl sm:text-2xl text-yellow-600"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Juara 1 Festival Film Pendek Pelajar</h3>
-                <p class="text-gray-600 text-sm sm:text-base ">Kategori Dokumenter - Tim Multimedia<i class="fas fa-medal achievement-badge ml-3"><span>Nasional</span></i></p>
-            </div>
-        </div>
-    </div>
-    </div>
 
     <!-- Wave Divider -->
     <div class="wave-divider"></div>
+    <section class="relative py-24 bg-fixed bg-cover bg-center"
+        style="background-image: url('assets/img/smkn4bdg.png');">
+        <!-- Parallax overlay untuk kontras konten -->
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]"></div>
+    </section>
 
     <!-- ===== JURUSAN ===== -->
     <section id="jurusan" class="section-light py-20">
@@ -702,16 +718,11 @@
         </div>
     </section>
 
-    <!-- Wave Divider -->
+     <!-- Wave Divider -->
     <div class="wave-divider"></div>
-    <section id="fasilitas" class="relative py-24 bg-fixed bg-cover bg-center"
-        style="background-image: url('assets/img/smkn4bdg.png');">
-        <!-- Parallax overlay untuk kontras konten -->
-        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]"></div>
-    </section>
 
     <!-- ===== FASILITAS ===== -->
-    <section id="fasilitas" class="relative py-20">
+    <section id="facility" class="relative py-20">
         <div class="section-bubbles" aria-hidden="true">
             <span class="bubble" style="--size: 140px; --dur: 20s; --delay: 0s; top: 6%; left: 5%;"></span>
             <span class="bubble" style="--size: 80px; --dur: 12s; --delay: 0.9s; bottom: 8%; right: 6%;"></span>
@@ -733,12 +744,9 @@
                             <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5 plus-card">
+                                <div class="plus-icon">+</div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -760,12 +768,9 @@
                             <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5 plus-card">
+                                <div class="plus-icon">+</div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -787,12 +792,9 @@
                             <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5 plus-card">
+                                <div class="plus-icon">+</div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -814,12 +816,9 @@
                             <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5 plus-card">
+                                <div class="plus-icon">+</div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -841,12 +840,9 @@
                             <div class="card c2"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c3"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
                             <div class="card c4"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c5"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c6"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c7"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c8"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c9"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
-                            <div class="card c10"><img src="assets/img/logo_smkn4bdg.png" alt=""></div>
+                            <div class="card c5 plus-card">
+                                <div class="plus-icon">+</div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -865,6 +861,11 @@
 
     <!-- Wave Divider -->
     <div class="wave-divider"></div>
+    <section class="relative py-24 bg-fixed bg-cover bg-center"
+        style="background-image: url('assets/img/smkn4bdg.png');">
+        <!-- Parallax overlay untuk kontras konten -->
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]"></div>
+    </section>
 
     <!-- ===== VIRTUAL TOUR ===== -->
     <section id="virtual-tour" class="section-light py-20">
@@ -881,42 +882,42 @@
 
             <div class="max-w-6xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-                        <div class="space-y-4 sm:space-y-6">
-                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Jelajahi Sekolah Kami</h3>
-                            <div class="space-y-3 sm:space-y-4">
-                                <div class="flex items-start">
-                                    <i class="fas fa-building text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Gedung Utama</h4>
-                                        <p class="text-gray-600 text-xs sm:text-sm">Lihat arsitektur modern dan ruang
-                                            belajar yang nyaman</p>
-                                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 ">
+                        <div class="space-y-6 text-center">
+                            <h3 class="text-3xl sm:text-3xl font-bold text-gray-900 mt-10 mb-12">
+                                Jelajahi Sekolah Kami
+                            </h3>
+                            <div class="space-y-8">
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-building text-blue-600 text-2xl sm:text-2xl"></i>
+                                        <h4 class="font-semibold text-gray-900 text-lg sm:text-xl">Gedung Utama</h4>
+                                        <p class="text-gray-600 text-sm sm:text-base mt-1">
+                                            Lihat arsitektur modern dan ruang belajar yang nyaman
+                                        </p>
                                 </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-tools text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Laboratorium
-                                            Praktik</h4>
-                                        <p class="text-gray-600 text-xs sm:text-sm">Jelajahi 8 ruang praktik dengan
-                                            peralatan industri</p>
-                                    </div>
+
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-tools text-blue-600 text-2xl sm:text-2xl"></i>
+                                        <h4 class="font-semibold text-gray-900 text-lg sm:text-xl">Laboratorium Praktik</h4>
+                                        <p class="text-gray-600 text-sm sm:text-base mt-1">
+                                            Jelajahi 8 ruang praktik dengan peralatan industri
+                                        </p>    
                                 </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-rocket text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Technopark</h4>
-                                        <p class="text-gray-600 text-xs sm:text-sm">Area inovasi dan pengembangan
-                                            teknologi</p>
-                                    </div>
+
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-rocket text-blue-600 text-2xl sm:text-2xl"></i>
+                                        <h4 class="font-semibold text-gray-900 text-lg sm:text-xl">Technopark</h4>
+                                        <p class="text-gray-600 text-sm sm:text-base mt-1">
+                                            Area inovasi dan pengembangan teknologi
+                                        </p>
                                 </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-book text-blue-600 mt-1 mr-3 text-lg sm:text-xl"></i>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Perpustakaan</h4>
-                                        <p class="text-gray-600 text-xs sm:text-sm">Ruang baca yang nyaman dengan
-                                            koleksi lengkap</p>
-                                    </div>
+
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-book text-blue-600 text-2xl sm:text-2xl"></i>
+                                        <h4 class="font-semibold text-gray-900 text-lg sm:text-xl">Perpustakaan</h4>
+                                        <p class="text-gray-600 text-sm sm:text-base mt-1">
+                                            Ruang baca yang nyaman dengan koleksi lengkap
+                                        </p>
                                 </div>
                             </div>
                         </div>
@@ -939,9 +940,10 @@
                                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
                                 </div>
-                                <a href="#" class="liquid-glass-btn secondary large flex items-center gap-3">
-                                    <i class="fas fa-vr-cardboard"></i>
-                                    Kunjungi Virtual Tour
+                                <a href="#"
+                                class="liquid-glass-btn secondary large flex items-center justify-center gap-3 text-center px-4 py-2">
+                                <i class="fas fa-vr-cardboard"></i>
+                                <span>Kunjungi Virtual Tour</span>
                                 </a>
                             </div>
                         </div>
@@ -953,7 +955,7 @@
 
     <!-- Wave Divider -->
     <div class="wave-divider"></div>
-
+    
     <!-- ===== DAFTAR ===== -->
     <section id="daftar" class="section-dark py-20">
         <div class="section-bubbles" aria-hidden="true">
@@ -1014,7 +1016,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-6">
+                            <div class="mt-6 text-center">
                                 <a href="https://spmb.jabarprov.go.id/" class="liquid-glass-btn primary"
                                     target="_blank">
                                     <i class="fas fa-external-link-alt mr-2"></i>
@@ -1028,24 +1030,41 @@
         </div>
     </section>
 
-    <!-- Wave Divider -->
-    <div class="wave-divider"></div>
-
     <!-- ===== FOOTER ===== -->
     <footer id="kontak" class="footer py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="footer-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="#beranda" class="brand-liquid-container-link">
-                        <div class="brand-liquid-container bg-transparent">
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center">
-                                <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
-                            </div>
-                            <div>
-                                <h1 class="text-xl font-bold text-gray-900">SMKN 4 Bandung</h1>
-                            </div>
+                    <div class="grid grid-cols-2 grid-rows-2 gap-2">
+                        <!-- Container SMKN 4 Bandung -->
+                        <div class="col-span-2 ">
+                            <a href="#beranda" class="brand-liquid-container-link">
+                                <div class="brand-liquid-container bg-transparent">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                                        <img src="/assets/img/logo_smkn4bdg.png" alt="logo SMKN 4 Bandung">
+                                    </div>
+                                    <div>
+                                        <h1 class="text-xl font-bold text-gray-900">SMKN 4 Bandung</h1>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+
+
+                        <!-- Container ORBIT dipindah ke bawah SMKN 4 Bandung -->
+                        <div class="col-span-2 row-start-2">
+                            <a href="#beranda" class="brand-liquid-container-link">
+                                <div class="brand-liquid-container bg-transparent">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                                        <img src="/assets/img/Logo_ORBIT.png" alt="logo SMKN 4 Bandung">
+                                    </div>
+                                    <div>
+                                        <h1 class="text-xl font-bold text-gray-900">ORBIT</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
                     <div class="space-y-4">
                         <h4 class="text-lg font-semibold">Kontak</h4>
@@ -1127,39 +1146,9 @@
     <!-- AOS Animations JS (load before our app script) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/JS/script.js"></script>
+    <!-- Marquee Helper Script -->
+    <script src="assets/js/marquee-helper.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.AOS) {
-                // Responsive AOS configuration
-                const isMobile = window.innerWidth <= 768;
-                const isSmallMobile = window.innerWidth <= 480;
-                
-                AOS.init({
-                    duration: isSmallMobile ? 400 : isMobile ? 500 : 700,
-                    once: false,   // animasi mengulang saat masuk lagi
-                    mirror: true,  // fade-out saat keluar viewport
-                    offset: isMobile ? 60 : 80,
-                    easing: 'ease-out-cubic',
-                    delay: isMobile ? 0 : 0,
-                    // Disable animations on very small screens for better performance
-                    disable: isSmallMobile ? 'phone' : false
-                });
-                
-                // Refresh AOS on window resize for responsive behavior
-                window.addEventListener('resize', function() {
-                    const newIsMobile = window.innerWidth <= 768;
-                    const newIsSmallMobile = window.innerWidth <= 480;
-                    
-                    if (newIsSmallMobile !== isSmallMobile || newIsMobile !== isMobile) {
-                        AOS.refresh();
-                    }
-                });
-                
-                window.addEventListener('load', function () { 
-                    AOS.refreshHard(); 
-                });
-            }
-        });
     </script>
 </body>
 
