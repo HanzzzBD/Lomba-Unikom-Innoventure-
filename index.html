@@ -38,6 +38,11 @@
 
 <body class="font-['Inter'] text-gray-800">
     
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
     <!-- Background particles for visual appeal -->
     <div class="particles"></div>
 
@@ -641,84 +646,217 @@
     </section>
 
     <!-- ===== JURUSAN ===== -->
-    <section id="jurusan" class="section-light py-20">
+    <section id="jurusan" class="section-light py-20 relative overflow-hidden">
+        <!-- Parallax Background Effect -->
+        <div class="jurusan-section-bg"></div>
+        
         <div class="section-bubbles" aria-hidden="true">
             <span class="bubble" style="--size: 110px; --dur: 16s; --delay: 0.2s; top: 12%; left: 8%;"></span>
             <span class="bubble" style="--size: 80px; --dur: 14s; --delay: 1s; bottom: 10%; left: 6%;"></span>
             <span class="bubble" style="--size: 130px; --dur: 19s; --delay: 0.8s; top: 14%; right: 8%;"></span>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-offset="120">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" data-aos="fade-up" data-aos-offset="120">
             <div class="text-center mb-16 animate-fade-in">
                 <h2 class="text-4xl font-bold mb-4">Program Keahlian</h2>
                 <p class="text-xl max-w-3xl mx-auto">Pilih program keahlian yang sesuai dengan minat dan bakat Anda
                     untuk masa depan yang cerah.</p>
             </div>
 
-            <div class="grid grid-cols-5 grid-rows-12 gap-8">
-                <div class="jurusan-card animate-scale-in col-span-5 row-span-2">
-                    <div class="jurusan-icon">
-                        <i class="fas fa-bolt"></i>
+            <!-- Scroll Jacking Container -->
+            <div class="scroll-jacking-container">
+                <div class="cards grid grid-cols-1 gap-8" style="--cards-count: 6; --card-height: 300px;">
+                    <div class="card jurusan-card animate-scale-in">
+                        <div class="card__inner flex">
+                            <div class="jurusan-visual w-1/3 bg-gradient-to-br from-purple-600 to-pink-500 rounded-l-xl flex items-center justify-center">
+                                <i class="fas fa-bolt text-white text-6xl"></i>
+                            </div>
+                            <div class="jurusan-content w-2/3 p-6">
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900">Teknik Instalasi Tenaga Listrik (TITL)</h3>
+                                <p class="text-gray-600 mb-4">Belajar tentang instalasi, pemeliharaan, dan pengoperasian sistem tenaga listrik.</p>
+                                
+                                <div class="career-options">
+                                    <div class="career-option">
+                                        <h4>Teknisi Listrik</h4>
+                                        <p>Instalasi dan perawatan sistem kelistrikan</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 5-10 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: D3 Teknik Listrik</span>
+                                        </div>
+                                    </div>
+                                    <div class="career-option">
+                                        <h4>Engineer Listrik</h4>
+                                        <p>Merancang sistem kelistrikan dan tenaga listrik</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 8-16 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: S1 Teknik Elektro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="jurusan-content">
-                        <h3 class="text-xl font-bold mb-2">Teknik Instalasi Tenaga Listrik (TITL)</h3>
-                        <p>Belajar tentang instalasi, pemeliharaan, dan pengoperasian sistem tenaga listrik.</p>
-                    </div>
-                </div>
 
-                <div class="jurusan-card animate-scale-in col-span-5 row-span-2 row-start-3" style="animation-delay: 0.1s;">
-                    <div class="jurusan-icon">
-                        <i class="fas fa-robot"></i>
+                    <div class="card jurusan-card animate-scale-in" style="animation-delay: 0.1s;">
+                        <div class="card__inner flex">
+                            <div class="jurusan-visual w-1/3 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-l-xl flex items-center justify-center">
+                                <i class="fas fa-robot text-white text-6xl"></i>
+                            </div>
+                            <div class="jurusan-content w-2/3 p-6">
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900">Teknik Otomasi Industri (TOI)</h3>
+                                <p class="text-gray-600 mb-4">Menguasai teknologi otomasi dan kontrol industri yang modern.</p>
+                                
+                                <div class="career-options">
+                                    <div class="career-option">
+                                        <h4>Automation Engineer</h4>
+                                        <p>Merancang dan mengimplementasikan sistem otomasi industri</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 7-15 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: S1 Teknik Otomasi</span>
+                                        </div>
+                                    </div>
+                                    <div class="career-option">
+                                        <h4>PLC Programmer</h4>
+                                        <p>Memprogram dan mengoptimalkan sistem kontrol industri</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 6-12 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: D3/S1 Teknik Otomasi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="jurusan-content">
-                        <h3 class="text-xl font-bold mb-2">Teknik Otomasi Industri (TOI)</h3>
-                        <p>Menguasai teknologi otomasi dan kontrol industri yang modern.</p>
-                    </div>
-                </div>
 
-                <div class="jurusan-card animate-scale-in col-span-5 row-span-2 row-start-5" style="animation-delay: 0.2s;">
-                    <div class="jurusan-icon">
-                        <i class="fas fa-video"></i>
+                    <div class="card jurusan-card animate-scale-in" style="animation-delay: 0.2s;">
+                        <div class="card__inner flex">
+                            <div class="jurusan-visual w-1/3 bg-gradient-to-br from-green-600 to-emerald-500 rounded-l-xl flex items-center justify-center">
+                                <i class="fas fa-video text-white text-6xl"></i>
+                            </div>
+                            <div class="jurusan-content w-2/3 p-6">
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900">Teknik Audio Video (TAV)</h3>
+                                <p class="text-gray-600 mb-4">Kreatif dalam produksi audio dan video dengan teknologi terkini.</p>
+                                
+                                <div class="career-options">
+                                    <div class="career-option">
+                                        <h4>Video Editor</h4>
+                                        <p>Mengedit dan memproduksi konten video profesional</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 5-12 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: D3/S1 Multimedia</span>
+                                        </div>
+                                    </div>
+                                    <div class="career-option">
+                                        <h4>Sound Engineer</h4>
+                                        <p>Mengatur dan memproduksi audio untuk berbagai media</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 6-13 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: D3/S1 Audio Engineering</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="jurusan-content">
-                        <h3 class="text-xl font-bold mb-2">Teknik Audio Video (TAV)</h3>
-                        <p>Kreatif dalam produksi audio dan video dengan teknologi terkini.</p>
-                    </div>
-                </div>
 
-                <div class="jurusan-card animate-scale-in col-span-5 row-span-2 row-start-7" style="animation-delay: 0.3s;">
-                    <div class="jurusan-icon">
-                        <i class="fas fa-network-wired"></i>
+                    <div class="card jurusan-card animate-scale-in" style="animation-delay: 0.3s;">
+                        <div class="card__inner flex">
+                            <div class="jurusan-visual w-1/3 bg-gradient-to-br from-indigo-600 to-purple-500 rounded-l-xl flex items-center justify-center">
+                                <i class="fas fa-network-wired text-white text-6xl"></i>
+                            </div>
+                            <div class="jurusan-content w-2/3 p-6">
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900">Teknik Komputer dan Jaringan (TKJ)</h3>
+                                <p class="text-gray-600 mb-4">Ahli dalam jaringan komputer dan administrasi sistem.</p>
+                                
+                                <div class="career-options">
+                                    <div class="career-option">
+                                        <h4>Network Administrator</h4>
+                                        <p>Mengelola dan memelihara infrastruktur jaringan komputer</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 6-12 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: S1 Teknik Informatika</span>
+                                        </div>
+                                    </div>
+                                    <div class="career-option">
+                                        <h4>Network Engineer</h4>
+                                        <p>Merancang dan mengimplementasikan jaringan komputer</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 8-15 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: S1 Teknik Komputer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="jurusan-content">
-                        <h3 class="text-xl font-bold mb-2">Teknik Komputer dan Jaringan (TKJ)</h3>
-                        <p>Ahli dalam jaringan komputer dan administrasi sistem.</p>
-                    </div>
-                </div>
 
-                <div class="jurusan-card animate-scale-in col-span-5 row-span-2 row-start-9" style="animation-delay: 0.4s;">
-                    <div class="jurusan-icon">
-                        <i class="fas fa-code"></i>
+                    <div class="card jurusan-card animate-scale-in" style="animation-delay: 0.4s;">
+                        <div class="card__inner flex">
+                            <div class="jurusan-visual w-1/3 bg-gradient-to-br from-orange-600 to-red-500 rounded-l-xl flex items-center justify-center">
+                                <i class="fas fa-code text-white text-6xl"></i>
+                            </div>
+                            <div class="jurusan-content w-2/3 p-6">
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900">Rekayasa Perangkat Lunak (RPL)</h3>
+                                <p class="text-gray-600 mb-4">Mengembangkan aplikasi dan software yang inovatif.</p>
+                                
+                                <div class="career-options">
+                                    <div class="career-option">
+                                        <h4>Software Developer</h4>
+                                        <p>Mengembangkan aplikasi dan perangkat lunak</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 7-15 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: S1 Teknik Informatika / Sistem Informasi</span>
+                                        </div>
+                                    </div>
+                                    <div class="career-option">
+                                        <h4>Quality Assurance</h4>
+                                        <p>Memastikan kualitas perangkat lunak melalui testing</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 6-12 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: D3/S1 Rekayasa Perangkat Lunak</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="jurusan-content">
-                        <h3 class="text-xl font-bold mb-2">Rekayasa Perangkat Lunak (RPL)</h3>
-                        <p>Mengembangkan aplikasi dan software yang inovatif.</p>
-                    </div>
-                </div>
 
-                <div class="jurusan-card animate-scale-in col-span-5 row-span-2 row-start-11" style="animation-delay: 0.5s;">
-                    <div class="jurusan-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div class="jurusan-content">
-                        <h3 class="text-xl font-bold mb-2">Desain Komunikasi Visual / Multimedia (DKV/MM)</h3>
-                        <p>Kreatif dalam desain grafis dan multimedia yang menarik.</p>
+                    <div class="card jurusan-card animate-scale-in" style="animation-delay: 0.5s;">
+                        <div class="card__inner flex">
+                            <div class="jurusan-visual w-1/3 bg-gradient-to-br from-pink-600 to-rose-500 rounded-l-xl flex items-center justify-center">
+                                <i class="fas fa-palette text-white text-6xl"></i>
+                            </div>
+                            <div class="jurusan-content w-2/3 p-6">
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900">Desain Komunikasi Visual / Multimedia (DKV/MM)</h3>
+                                <p class="text-gray-600 mb-4">Kreatif dalam desain grafis dan multimedia yang menarik.</p>
+                                
+                                <div class="career-options">
+                                    <div class="career-option">
+                                        <h4>Desainer Grafis</h4>
+                                        <p>Membuat desain visual untuk media cetak dan digital</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 5-10 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: D3/S1 DKV</span>
+                                        </div>
+                                    </div>
+                                    <div class="career-option">
+                                        <h4>UI/UX Designer</h4>
+                                        <p>Merancang antarmuka pengguna yang menarik dan mudah digunakan</p>
+                                        <div class="career-details">
+                                            <span><i class="fas fa-money-bill"></i> Gaji: Rp 7-15 juta</span>
+                                            <span><i class="fas fa-graduation-cap"></i> Pendidikan: S1 DKV / Informatika</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- Wave Divider -->
+    <!-- Wave Divider -->
     <div class="wave-divider"></div>
 
     <!-- ===== FASILITAS ===== -->
@@ -1148,8 +1286,10 @@
     <script src="assets/JS/script.js"></script>
     <!-- Marquee Helper Script -->
     <script src="assets/js/marquee-helper.js"></script>
-    <script>
-    </script>
+    
+    <!-- AAT.js for Scroll Animation -->
+    <script src="https://unpkg.com/aat@1.0.0/dist/aat.min.js"></script>
+
 </body>
 
 </html>
