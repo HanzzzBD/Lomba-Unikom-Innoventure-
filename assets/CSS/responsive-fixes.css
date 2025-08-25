@@ -106,6 +106,67 @@
     }
 }
 
+/* ===== MOBILE HAMBURGER TOGGLE (checkbox-based) ===== */
+#checkbox {
+    display: none;
+}
+
+.toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .3s;
+    z-index: 10010; /* above glass header */
+}
+
+.bars {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(253, 255, 243);
+    border-radius: 5px;
+    transition: transform .3s ease, margin .3s ease;
+}
+
+/* Initial bar placement for 30px toggle */
+#bar1 { top: 4px; }
+#bar2 { top: 13px; }
+#bar3 { top: 22px; }
+
+/* Animation */
+#checkbox:checked + .toggle #bar2 {
+    transform: translateY(9px) rotate(60deg);
+    margin-left: 0;
+    transform-origin: right;
+    transition-duration: .3s;
+    z-index: 2;
+}
+
+#checkbox:checked + .toggle #bar1 {
+    transform: translateY(18px) rotate(-60deg);
+    transition-duration: .3s;
+    transform-origin: left;
+    z-index: 1;
+}
+
+#checkbox:checked + .toggle {
+    transform: rotate(-90deg);
+}
+
+/* Optionally hide middle/third bar overlap while crossed */
+#checkbox:checked + .toggle #bar3 { opacity: 0; transition: opacity .2s ease; }
+
+/* Ensure visibility for light/dark themes */
+body[data-theme="dark"] .toggle .bars { background-color: #f8fafc; }
+body[data-theme="light"] .toggle .bars { background-color: #0f172a; }
+
 @media (max-width: 640px) {
     #virtual-tour .bg-gradient-to-br {
         padding: 1rem;
@@ -410,18 +471,53 @@ body[data-theme="dark"] #mobile-menu a { color: #f8fafc !important; }
     border-color: rgba(59,130,246,0.45);
     box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,130,246,0.15) inset;
 }
-#fasilitas .facility-card:active { transform: translateY(-4px) scale(1.01); }
-#fasilitas .facility-card .facility-image { transition: transform .35s ease, filter .35s ease; }
-#fasilitas .facility-card:hover .facility-image { transform: translateY(-6px) scale(1.06); filter: brightness(1.05); }
-#fasilitas .facility-content h3 { font-size: 1.5rem; }
-#fasilitas .facility-content p { font-size: 1.05rem; }
-#fasilitas .facility-image { height: 320px; font-size: 3.75rem; }
-#fasilitas .facility-card { padding-bottom: 0.5rem; }
+#facility .facility-card:active, #fasilitas .facility-card:active { transform: translateY(-4px) scale(1.01); }
+#facility .facility-card .facility-image, #fasilitas .facility-card .facility-image { transition: transform .35s ease, filter .35s ease; }
+#facility .facility-card:hover .facility-image, #fasilitas .facility-card:hover .facility-image { transform: translateY(-6px) scale(1.06); filter: brightness(1.05); }
+#facility .facility-content h3, #fasilitas .facility-content h3 { font-size: 1.5rem; }
+#facility .facility-content p, #fasilitas .facility-content p { font-size: 1.05rem; }
+#facility .facility-image, #fasilitas .facility-image { height: 320px; font-size: 3.75rem; }
+#facility .facility-card, #fasilitas .facility-card { padding-bottom: 0.5rem; }
+#facility .facility-card .photo-stack, #fasilitas .facility-card .photo-stack {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
 
 @media (min-width: 1024px) {
-    #fasilitas .facility-image { height: 360px; font-size: 4.25rem; }
-    #fasilitas .facility-content h3 { font-size: 1.625rem; }
-    #fasilitas .facility-content p { font-size: 1.1rem; }
+    #facility .facility-image, #fasilitas .facility-image { height: 360px;  font-size: 4.25rem; }
+    #facility .facility-content h3, #fasilitas .facility-content h3 { font-size: 1.625rem; }
+    #facility .facility-content p, #fasilitas .facility-content p { font-size: 1.1rem; }
+}
+
+/* Mobile-specific fixes: keep photo-stack centered and within bounds */
+@media (max-width: 640px) {
+    #facility .facility-card .photo-stack, #fasilitas .facility-card .photo-stack { height: 180px; overflow: hidden; }
+    #facility .facility-card .photo-stack .card,
+    #facility .facility-card .photo-stack .plus-card,
+    #fasilitas .facility-card .photo-stack .card,
+    #fasilitas .facility-card .photo-stack .plus-card {
+        width: 100% !important;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    /* Show full logo/image without cropping on small screens */
+    #facility .facility-card .photo-stack .card img,
+    #fasilitas .facility-card .photo-stack .card img { object-fit: contain; }
+    /* Reduce spread distances on small screens */
+    #facility .photo-stack.is-active .c1, #fasilitas .photo-stack.is-active .c1 { transform: translateX(-48px) rotate(-22deg); }
+    #facility .photo-stack.is-active .c2, #fasilitas .photo-stack.is-active .c2 { transform: translateX(-36px) rotate(-18deg); }
+    #facility .photo-stack.is-active .c3, #fasilitas .photo-stack.is-active .c3 { transform: translateX(-24px) rotate(-14deg); }
+    #facility .photo-stack.is-active .c4, #fasilitas .photo-stack.is-active .c4 { transform: translateX(-12px) rotate(-10deg); }
+    #facility .photo-stack.is-active .c5, #fasilitas .photo-stack.is-active .c5 { transform: translateX(-6px) rotate(-6deg); }
+}
+
+/* step up at sm */
+@media (min-width: 640px) {
+    #facility .facility-card .photo-stack, #fasilitas .facility-card .photo-stack { height: 260px; }
 }
 
 .timeline-tag {

@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE MENU TOGGLE =====
     const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuCheckbox = document.getElementById('checkbox');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     
     function openMobileMenu() {
@@ -118,17 +120,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 400);
     }
 
-    if (mobileMenuButton && mobileMenu) {
+    function syncAriaExpanded(expanded) {
+        if (mobileMenuToggle) {
+            mobileMenuToggle.setAttribute('aria-expanded', String(expanded));
+        }
+    }
+
+    // When checkbox changes, open/close menu
+    if (mobileMenuCheckbox && mobileMenu) {
+        mobileMenuCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                openMobileMenu();
+                syncAriaExpanded(true);
+            } else {
+                closeMobileMenu();
+                syncAriaExpanded(false);
+            }
+        });
+    }
+
+    // Ensure label click also toggles menu even if checkbox change is prevented by overlay
+    if (mobileMenuToggle && mobileMenuCheckbox) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            // Let native label behavior run first in next tick, then sync
+            setTimeout(() => {
+                const checked = mobileMenuCheckbox.checked;
+                if (checked) openMobileMenu(); else closeMobileMenu();
+                syncAriaExpanded(checked);
+            }, 0);
+        });
+    }
+
+    // Backward compatibility: if old button exists, wire it to checkbox
+    if (mobileMenuButton && mobileMenuCheckbox) {
         mobileMenuButton.addEventListener('click', function() {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) openMobileMenu(); else closeMobileMenu();
+            mobileMenuCheckbox.checked = !mobileMenuCheckbox.checked;
+            const checked = mobileMenuCheckbox.checked;
+            if (checked) openMobileMenu(); else closeMobileMenu();
+            syncAriaExpanded(checked);
         });
         // Click outside to close
         document.addEventListener('click', function(e) {
             const clickInsideMenu = mobileMenu.contains(e.target);
-            const clickOnButton = mobileMenuButton.contains(e.target);
+            const clickOnButton = (mobileMenuToggle && mobileMenuToggle.contains(e.target)) || (mobileMenuButton && mobileMenuButton.contains(e.target));
             if (!clickInsideMenu && !clickOnButton && !mobileMenu.classList.contains('hidden')) {
                 closeMobileMenu();
+                if (mobileMenuCheckbox) mobileMenuCheckbox.checked = false;
+                syncAriaExpanded(false);
             }
         });
     }
@@ -295,6 +333,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
             closeMobileMenu();
+            if (mobileMenuCheckbox) mobileMenuCheckbox.checked = false;
+            syncAriaExpanded(false);
         }
     });
 
@@ -503,6 +543,15 @@ document.addEventListener('DOMContentLoaded', function() {
         cards.forEach((card) => {
             card.style.pointerEvents = 'auto';
             card.addEventListener('click', (e) => {
+                const stack = card.closest('.photo-stack');
+                // First tap on mobile: expand the stack instead of opening the lightbox
+                if (stack && !stack.classList.contains('is-active')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    stack.classList.add('is-active');
+                    return;
+                }
+
                 e.stopPropagation();
                 const imgEl = card.querySelector('img');
                 const dataUrl = card.getAttribute('data-image');
@@ -520,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const stacks = document.querySelectorAll('.photo-stack');
         stacks.forEach((stack) => {
             stack.addEventListener('click', (e) => {
-                // If user tapped a card (to open lightbox), don't toggle state
+                // If user tapped outside a card, toggle spread state
                 const tappedCard = e.target.closest && e.target.closest('.card');
                 if (!tappedCard) {
                     stack.classList.toggle('is-active');
