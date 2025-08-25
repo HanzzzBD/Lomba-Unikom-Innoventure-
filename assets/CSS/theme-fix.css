@@ -814,7 +814,7 @@ html {
 
       /* Kursor bulat custom - optimized for smooth movement */
       .cursor-circle {
-        position: fixed;
+        position: sticky;
         left: 0;
         top: 0;
         width: 12px;
@@ -849,7 +849,7 @@ html {
       
       /* Area invert pakai clip-path lingkaran */
       .invert-spot {
-        position: fixed;
+        position: sticky;
         left: 0; 
         top: 0;
         width: 100vw; 
