@@ -1229,3 +1229,86 @@ document.addEventListener('DOMContentLoaded', initializeNavbarIndicator);
 
 // Also initialize when the page is fully loaded (for any dynamic content)
 window.addEventListener('load', initializeNavbarIndicator);
+
+// ===== STACKING SCROLL EFFECT FOR JURUSAN SECTION =====
+function initializeStackingScrollEffect() {
+    console.log('Initializing stacking scroll effect...');
+    
+    // Wait for aat.js to be loaded
+    if (typeof aat === 'undefined') {
+        console.warn('aat.js not loaded, retrying in 100ms...');
+        setTimeout(initializeStackingScrollEffect, 100);
+        return;
+    }
+    
+    const { ScrollObserver, valueAtPercentage } = aat;
+    
+    const cardsContainer = document.querySelector('#jurusan .cards');
+    const cards = document.querySelectorAll('#jurusan .card');
+    
+    if (!cardsContainer || cards.length === 0) {
+        console.warn('Cards container or cards not found for stacking effect');
+        return;
+    }
+    
+    console.log('Found cards container and', cards.length, 'cards');
+    
+    // Set CSS custom properties
+    cardsContainer.style.setProperty('--cards-count', cards.length);
+    cardsContainer.style.setProperty('--card-height', `${cards[0].clientHeight}px`);
+    
+    // Apply stacking effect to each card
+    Array.from(cards).forEach((card, index) => {
+        const offsetTop = 20 + index * 20;
+        card.style.paddingTop = `${offsetTop}px`;
+        
+        // Skip the last card as it doesn't need scaling
+        if (index === cards.length - 1) {
+            return;
+        }
+        
+        const toScale = 1 - (cards.length - 1 - index) * 0.1;
+        const nextCard = cards[index + 1];
+        const cardInner = card.querySelector('.card__inner');
+        
+        if (!cardInner) {
+            console.warn('Card inner element not found for card', index);
+            return;
+        }
+        
+        console.log(`Setting up scroll observer for card ${index + 1}, scale target: ${toScale}`);
+        
+        ScrollObserver.Element(nextCard, {
+            offsetTop,
+            offsetBottom: window.innerHeight - card.clientHeight
+        }).onScroll(({ percentageY }) => {
+            const scale = valueAtPercentage({
+                from: 1,
+                to: toScale,
+                percentage: percentageY
+            });
+            
+            const brightness = valueAtPercentage({
+                from: 1,
+                to: 0.6,
+                percentage: percentageY
+            });
+            
+            cardInner.style.scale = scale;
+            cardInner.style.filter = `brightness(${brightness})`;
+            
+            // Add some debug logging for the first card
+            if (index === 0 && percentageY % 25 < 1) {
+                console.log(`Card ${index + 1} - Scale: ${scale.toFixed(2)}, Brightness: ${brightness.toFixed(2)}`);
+            }
+        });
+    });
+    
+    console.log('Stacking scroll effect initialized successfully!');
+}
+
+// Initialize stacking scroll effect when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeStackingScrollEffect);
+
+// Also initialize when the page is fully loaded (for any dynamic content)
+window.addEventListener('load', initializeStackingScrollEffect);
