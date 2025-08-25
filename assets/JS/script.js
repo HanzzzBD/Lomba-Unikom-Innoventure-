@@ -1095,132 +1095,132 @@ function initializeNavbarIndicator() {
     console.log('Initializing navbar indicator...');
     
     const navContainer = document.querySelector('.nav-links-liquid-containe');
-    const indicator = document.getElementById('liquid-indicator');
-    const links = Array.from(document.querySelectorAll('.liquid-nav-link'));
-    
-    console.log('Elements found:', {
-        navContainer: !!navContainer,
-        indicator: !!indicator,
-        linksCount: links.length
-    });
-    
+        const indicator = document.getElementById('liquid-indicator');
+        const links = Array.from(document.querySelectorAll('.liquid-nav-link'));
+        
+        console.log('Elements found:', {
+            navContainer: !!navContainer,
+            indicator: !!indicator,
+            linksCount: links.length
+        });
+        
     if (!navContainer || !indicator || links.length === 0) {
         console.warn('Required elements not found for navbar indicator');
-        return;
-    }
-    
-    function moveIndicator(target) {
+            return;
+        }
+        
+        function moveIndicator(target) {
         if (!indicator || !navContainer || !target) return;
         
-        const targetRect = target.getBoundingClientRect();
-        const parentRect = navContainer.getBoundingClientRect();
-        const width = Math.max(60, targetRect.width);
-        const left = targetRect.left - parentRect.left;
-        
+                const targetRect = target.getBoundingClientRect();
+                const parentRect = navContainer.getBoundingClientRect();
+                const width = Math.max(60, targetRect.width);
+                const left = targetRect.left - parentRect.left;
+                
         console.log('Moving indicator to:', target.textContent, { width, left });
-        
-        indicator.style.width = width + 'px';
-        indicator.style.left = left + 'px';
-        indicator.classList.add('active');
+                
+                indicator.style.width = width + 'px';
+                indicator.style.left = left + 'px';
+                indicator.classList.add('active');
     }
     
     // Set initial active link
     const activeLink = document.querySelector('.liquid-nav-link.active') || links[0];
-    if (activeLink) {
+        if (activeLink) {
         console.log('Setting initial active link:', activeLink.textContent);
-        moveIndicator(activeLink);
-    }
-    
+            moveIndicator(activeLink);
+        }
+        
     // Add event listeners for hover and focus
-    links.forEach((link) => {
-        link.addEventListener('mouseenter', () => {
-            console.log('Mouse enter on:', link.textContent);
-            moveIndicator(link);
-        });
-        link.addEventListener('focus', () => {
-            console.log('Focus on:', link.textContent);
-            moveIndicator(link);
+        links.forEach((link) => {
+            link.addEventListener('mouseenter', () => {
+                console.log('Mouse enter on:', link.textContent);
+                moveIndicator(link);
+            });
+            link.addEventListener('focus', () => {
+                console.log('Focus on:', link.textContent);
+                moveIndicator(link);
+            });
+            
+            // Add click event for smooth scrolling
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Click on:', this.textContent);
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Update liquid indicator immediately on click
+                    moveIndicator(this);
+                    
+                    // Smooth scroll to section
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    links.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
         });
         
-        // Add click event for smooth scrolling
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Click on:', this.textContent);
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                // Update liquid indicator immediately on click
-                moveIndicator(this);
-                
-                // Smooth scroll to section
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-                
-                // Update active state
-                links.forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-                this.classList.add('active');
-                
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            }
-        });
-    });
-    
     // Handle window resize
-    window.addEventListener('resize', () => {
-        console.log('Window resize detected');
-        const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
-        if (currentActive) {
-            moveIndicator(currentActive);
-        }
-    });
-    
-    // Return to active link when mouse leaves nav container
-    if (navContainer) {
-        navContainer.addEventListener('mouseleave', () => {
-            console.log('Mouse leave nav container');
+        window.addEventListener('resize', () => {
+            console.log('Window resize detected');
             const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
             if (currentActive) {
                 moveIndicator(currentActive);
             }
         });
-    }
-    
-    // Add scroll-based active state management
-    const sections = document.querySelectorAll('section[id]');
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + 100;
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
+    // Return to active link when mouse leaves nav container
+        if (navContainer) {
+            navContainer.addEventListener('mouseleave', () => {
+                console.log('Mouse leave nav container');
+                const currentActive = document.querySelector('.liquid-nav-link.active') || links[0];
+                if (currentActive) {
+                    moveIndicator(currentActive);
+                }
+            });
+        }
+        
+        // Add scroll-based active state management
+        const sections = document.querySelectorAll('section[id]');
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 100;
             
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                        console.log('Scroll: Setting active link to:', link.textContent);
-                        moveIndicator(link);
-                    }
-                });
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', updateActiveNav);
-    
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                            console.log('Scroll: Setting active link to:', link.textContent);
+                            moveIndicator(link);
+                        }
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        
     console.log('Navbar indicator initialized successfully!');
 }
 
