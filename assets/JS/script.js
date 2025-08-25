@@ -650,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing new liquid navigation system...');
     
     function initLiquidNavigation() {
-        const navContainer = document.querySelector('.nav-links-liquid-container');
+        const navContainer = document.querySelector('.nav-links-liquid-containe');
         const indicator = document.getElementById('liquid-indicator');
         const links = Array.from(document.querySelectorAll('.liquid-nav-link'));
         
@@ -1094,7 +1094,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function initializeNavbarIndicator() {
     console.log('Initializing navbar indicator...');
     
-    const navContainer = document.querySelector('.nav-links-liquid-container');
+    const navContainer = document.querySelector('.nav-links-liquid-containe');
     const indicator = document.getElementById('liquid-indicator');
     const links = Array.from(document.querySelectorAll('.liquid-nav-link'));
     
