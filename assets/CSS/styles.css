@@ -1610,7 +1610,7 @@ body[data-theme="dark"] .theme-toggle-btn:focus-visible::after {
 
         rgba(255, 215, 0, 0.7) 50%, 
 
-        rgba(255, 215, 0, 0.4) 75%, 
+        rgba(255, 215, 0, 0.4) 75%,     
 
         transparent 100%);
 
